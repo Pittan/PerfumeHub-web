@@ -26,7 +26,7 @@ describe('ScheduleService', () => {
   it('userInfo', async(inject([ScheduleService, MockBackend], (schedule: ScheduleService, backend: MockBackend) => {
 
     backend.connections.subscribe((conn: MockConnection) => {
-      let ops = new ResponseOptions({body: {'schedule' : [{body: 'hogehoge'},{body: 'foobar'}]} });
+      const ops = new ResponseOptions({body: {'schedule' : [{body: 'hogehoge'}, {body: 'foobar'}]} });
       conn.mockRespond(new Response(ops));
     });
 

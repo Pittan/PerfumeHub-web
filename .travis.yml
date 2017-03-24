@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "6.x"
+
+before_script:
+  - npm install -g firebase-tools
+  - npm install -g @angular/cli
+
+script:
+  - npm install
+  - ng lint
+  - ng test --single-run --progress false --reporters dots
+  - ng build --prod --progress false
+
+after_success:
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && firebase deploy --token $FIREBASE_TOKEN

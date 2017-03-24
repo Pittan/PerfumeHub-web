@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  endpoint: 'https://api.pittankopta.net/pta/v3/'
 };

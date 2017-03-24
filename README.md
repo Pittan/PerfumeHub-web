@@ -1,4 +1,5 @@
-# PerfumeHubWeb
+# PerfumeHub-web
+[![Build Status](https://travis-ci.org/Pittan/PerfumeHub-web.svg?branch=master)](https://travis-ci.org/Pittan/PerfumeHub-web)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.4.
 

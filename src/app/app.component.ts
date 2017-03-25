@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Angulartics2GoogleAnalytics } from 'angulartics2';
 import { HeaderService } from './header/header.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { HeaderService } from './header/header.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private headerService: HeaderService) {}
+  constructor(private headerService: HeaderService, angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics) {}
 
   ngOnInit() {
     this.headerService.setTitle('PerfumeHub');

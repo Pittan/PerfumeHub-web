@@ -13,6 +13,7 @@ import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 import { ScheduleListComponent } from './schedule-list/schedule-list.component';
 import { ScheduleService } from './schedule.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DateParsePipe } from './pipe/date-parse.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     DateJpPipe,
     HeaderComponent,
     PageNotFoundComponent,
-    ScheduleListComponent
+    ScheduleListComponent,
+    DateParsePipe
   ],
   imports: [
     BrowserModule,

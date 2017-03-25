@@ -8,7 +8,7 @@ fdescribe('DatePipeJpPipe', () => {
 
   it('2017/02/25 の曜日は土になる', () => {
     const pipe = new DateJpPipe();
-    expect(pipe.transform('2017/02/25','EEE')).toEqual('土');
-  })
+    expect(pipe.transform('2017/02/25', 'EEE')).toEqual('土');
+  });
 });
 

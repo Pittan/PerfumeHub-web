@@ -9,6 +9,8 @@ import { DateJpPipe } from './pipe/date-jp.pipe';
 import { HeaderComponent } from './header/header.component';
 import { HeaderService } from './header/header.service';
 
+import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,8 @@ import { HeaderService } from './header/header.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ])
   ],
   providers: [HeaderService],
   bootstrap: [AppComponent]

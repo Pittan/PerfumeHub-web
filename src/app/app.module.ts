@@ -6,11 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DateJpPipe } from './pipe/date-jp.pipe';
+import { HeaderComponent } from './header/header.component';
+import { HeaderService } from './header/header.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DateJpPipe
+    DateJpPipe,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +21,7 @@ import { DateJpPipe } from './pipe/date-jp.pipe';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [HeaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

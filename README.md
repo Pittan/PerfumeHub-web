@@ -2,9 +2,9 @@
 ![Logo](https://app.pittankopta.net/pta/info/img/perfumehub-icon.png)  
 [![Build Status](https://travis-ci.org/Pittan/PerfumeHub-web.svg?branch=master)](https://travis-ci.org/Pittan/PerfumeHub-web)  
 
-PerfumeHubのweb部分のプロジェクトリポジトリです。
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.4.
+PerfumeHubのweb部分のプロジェクトリポジトリです。  
 
+このプロジェクトは [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.4 で作成されました。
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

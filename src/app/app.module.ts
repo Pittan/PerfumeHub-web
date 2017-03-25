@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DateJpPipe } from './pipe/date-jp.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DateJpPipe
   ],
   imports: [
     BrowserModule,

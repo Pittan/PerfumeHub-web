@@ -1,0 +1,69 @@
+&:host
+  width 100%
+  height 100%
+  overflow scroll
+  -webkit-overflow-scrolling touch
+
+  .page-title
+    margin-top 25px
+    font-size 18px
+    line-height 22px
+    text-align center
+    font-weight 700
+
+  .date
+    font-size 14px
+    line-height 16px
+    text-align center
+
+  .no-schedule
+    font-size 15px
+    line-height 18px
+    text-align center
+    margin-top 40px
+
+  .schedule-list
+    margin-top 10px
+
+  .schedule-cell
+    background-color #ffffff
+    border-radius 5px
+    margin 0 10px 10px
+    border-bottom 1px solid #e0e0e0
+    display flex
+
+    &:first-child
+      margin-top 0
+
+    .icon
+      height 40px
+      width 40px
+      background-color #489BC6
+      border-radius 20px
+      flex none
+      margin 10px
+
+      .icon-text
+        font-size 6px
+        color white
+        font-weight 700
+
+    .schedule-container
+      flex 1
+      margin 10px 10px 10px 0
+
+      .schedule-header
+        font-weight 700
+        font-size 12px
+        line-height 14px
+
+      .schedule-description
+        font-size 13px
+        line-height 15px
+        margin 4px 0
+        padding-bottom 4px
+        border-bottom 1px solid #e0e0e0
+
+      .schedule-datetime
+        font-size 11px
+        line-height 14px

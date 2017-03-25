@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  endpoint: 'http://dev.api.pittankopta.net/pta/v3/'
+  endpoint: 'http://dev.api.pittankopta.net/pta/v3/',
+  version: '0.1.0-dev'
 };

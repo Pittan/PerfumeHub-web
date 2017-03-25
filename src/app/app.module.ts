@@ -10,6 +10,8 @@ import { HeaderComponent } from './header/header.component';
 import { HeaderService } from './header/header.service';
 
 import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
+import { ScheduleListComponent } from './schedule-list/schedule-list.component';
+import { ScheduleService } from './schedule.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
@@ -17,7 +19,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppComponent,
     DateJpPipe,
     HeaderComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ScheduleListComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule,
     Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ])
   ],
-  providers: [HeaderService],
+  providers: [HeaderService, ScheduleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

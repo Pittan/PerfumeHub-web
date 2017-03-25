@@ -14,6 +14,7 @@ import { ScheduleListComponent } from './schedule-list/schedule-list.component';
 import { ScheduleService } from './schedule.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DateParsePipe } from './pipe/date-parse.pipe';
+import { AboutPerfumeHubComponent } from './about-perfume-hub/about-perfume-hub.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DateParsePipe } from './pipe/date-parse.pipe';
     HeaderComponent,
     PageNotFoundComponent,
     ScheduleListComponent,
-    DateParsePipe
+    DateParsePipe,
+    AboutPerfumeHubComponent
   ],
   imports: [
     BrowserModule,

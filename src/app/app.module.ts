@@ -15,6 +15,7 @@ import { ScheduleService } from './schedule.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DateParsePipe } from './pipe/date-parse.pipe';
 import { AboutPerfumeHubComponent } from './about-perfume-hub/about-perfume-hub.component';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { AboutPerfumeHubComponent } from './about-perfume-hub/about-perfume-hub.
     AppRoutingModule,
     Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ])
   ],
-  providers: [HeaderService, ScheduleService],
+  providers: [HeaderService, ScheduleService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

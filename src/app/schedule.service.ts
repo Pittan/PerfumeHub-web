@@ -9,11 +9,21 @@ export class ScheduleService {
 
   constructor(private http: Http) { }
 
+
+  /**
+   * APIからScheduleを取得します
+   * @param id {string} スケジュールのID
+   */
+  fetchSchedule(id?: string) {
+    // TODO サーバ未実装
+    // TODO クライアント未実装
+  }
+
   /**
    * APIからScheduleを取得します
    * @param [date] {string} yyyyMMdd形式で指定する
    */
-  fetchSchedule(date?: string) {
+  fetchScheduleList(date?: string) {
     let url = environment.endpoint + 'schedule/';
 
     if (date) {

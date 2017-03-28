@@ -22,7 +22,7 @@ export class ScheduleListComponent implements OnInit {
   ngOnInit() {
     this.titleService.setTitle('今日のPerfume');
     this.date = new Date();
-    this.scheduleService.fetchSchedule().subscribe(
+    this.scheduleService.fetchScheduleList().subscribe(
       data => {
         this.loading = false;
         this.schedules = data;

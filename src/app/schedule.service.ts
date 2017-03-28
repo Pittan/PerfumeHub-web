@@ -43,7 +43,7 @@ export class ScheduleService {
     const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'});
     const options = new RequestOptions({ headers: headers , withCredentials: true});
 
-    let params = {
+    const params = {
       background_color: schedule.background_color,
       background_icon: schedule.background_icon,
       header: schedule.header,
@@ -51,14 +51,16 @@ export class ScheduleService {
       weekday: null,
       category: schedule.category,
       website_url: schedule.website_url,
-      start_at: schedule.start_at,  //W:TIME A:DATETIME に注意
-      end_at: schedule.end_at,      //W:TIME A:DATETIME に注意
+      start_at: schedule.start_at,  // W:TIME A:DATETIME に注意
+      end_at: schedule.end_at,      // W:TIME A:DATETIME に注意
       is_notification_enabled: schedule.is_notification_enabled ? 1 : 0,
       is_all_day: schedule.is_all_day ? 1 : 0,
       is_midnight: schedule.is_midnight ? 1 : 0
     };
 
-    if (schedule.weekday) params.weekday = schedule.weekday;
+    if (schedule.weekday) {
+      params.weekday = schedule.weekday;
+    }
 
     const json = JSON.stringify(params);
     const type = isWeeklySchedule ? 'weekly' : 'absolute';

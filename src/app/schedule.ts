@@ -4,7 +4,7 @@
 export interface Schedule {
 
   // ID
-  id: string;
+  id?: string;
 
   // 本文(番組名など)
   body: string;

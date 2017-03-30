@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../environments/environment';
-import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Schedule } from './schedule';
+import { ApiBaseService } from './core/api-base.service';
 
 @Injectable()
 export class ScheduleService {
 
-  constructor(private http: Http) { }
-
-
+  constructor(private apiBaseService: ApiBaseService) { }
+  
   /**
    * APIからScheduleを取得します
    * @param id {string} スケジュールのID
@@ -24,13 +22,7 @@ export class ScheduleService {
    * @param [date] {string} yyyyMMdd形式で指定する
    */
   fetchScheduleList(date?: string) {
-    let url = environment.endpoint + 'schedule/';
-
-    if (date) {
-      url += '?date=' + date;
-    }
-
-    return this.http.get(url)
+    return this.apiBaseService.get('schedule/', { date: date })
       .map(res => res.json().schedule as Schedule[]);
   }
 
@@ -39,10 +31,6 @@ export class ScheduleService {
    * @returns {Observable<R>}
    */
   postSchedule(schedule: Schedule, isWeeklySchedule: boolean) {
-    const url = environment.endpoint + 'schedule/';
-    const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'});
-    const options = new RequestOptions({ headers: headers , withCredentials: true});
-
     const params = {
       background_color: schedule.background_color,
       background_icon: schedule.background_icon,
@@ -62,11 +50,12 @@ export class ScheduleService {
       params.weekday = schedule.weekday;
     }
 
-    const json = JSON.stringify(params);
-    const type = isWeeklySchedule ? 'weekly' : 'absolute';
-    const body = 'type=' + type + '&schedule=' + json;
+    const param = {
+      type: isWeeklySchedule ? 'weekly' : 'absolute',
+      schedule: JSON.stringify(params)
+    };
 
-    return this.http.post(url, body, options)
+    return this.apiBaseService.post('schedule/', param)
       .map(res => res.json());
   }
 
@@ -83,10 +72,7 @@ export class ScheduleService {
    * @returns {Observable<R>}
    */
   deleteSchedule(id: string) {
-    const url = environment.endpoint + 'schedule/';
-    const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'});
-    const options = new RequestOptions({ headers: headers , withCredentials: true});
-    return this.http.delete(url + id, options)
+    return this.apiBaseService.delete('schedule/' + id)
       .map(res => res.json());
   }
 }

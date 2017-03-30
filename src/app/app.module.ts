@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { DateJpPipe } from './pipe/date-jp.pipe';
 import { HeaderComponent } from './header/header.component';
 import { HeaderService } from './header/header.service';
+import { CoreModule } from './core/core.module';
 
 import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 import { ScheduleListComponent } from './schedule-list/schedule-list.component';
@@ -36,7 +37,8 @@ import { ScheduleCellComponent } from './schedule-cell/schedule-cell.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ])
+    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
+    CoreModule
   ],
   providers: [HeaderService, ScheduleService, UserService],
   bootstrap: [AppComponent]

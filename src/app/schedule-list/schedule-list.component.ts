@@ -28,6 +28,13 @@ export class ScheduleListComponent implements OnInit {
         this.schedules = data;
       }
     );
+
+    //
+    // this.scheduleService.postSchedule().subscribe(
+    //   data => {
+    //     console.log(data);
+    //   }
+    // );
   }
 
 }

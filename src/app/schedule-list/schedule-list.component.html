@@ -2,18 +2,7 @@
 <div class="date">{{date | dateJp:'y/M/d(EEE)'}}</div>
 
 <div class="schedule-list" *ngIf="schedules.length > 0">
-
-  <div class="schedule-cell" *ngFor="let schedule of schedules">
-    <div class="icon ph-flex-center">
-      <div class="icon-text">{{schedule.category}}</div>
-    </div>
-    <div class="schedule-container">
-      <div class="schedule-header" *ngIf="schedule.header">{{schedule.header}}</div>
-      <div class="schedule-description">{{schedule.body}}</div>
-      <div class="schedule-datetime" *ngIf="!schedule.is_all_day">{{schedule.start_at | dateParse | date:'d日 HH:mm'}}〜{{schedule.end_at | dateParse | date:'HH:mm'}}</div>
-    </div>
-  </div>
-
+  <ph-schedule-cell *ngFor="let schedule of schedules" [schedule]="schedule"></ph-schedule-cell>
 </div>
 
 <div class="no-schedule" *ngIf="!loading && schedules.length == 0">

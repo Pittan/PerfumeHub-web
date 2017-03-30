@@ -17,6 +17,7 @@ import { DateParsePipe } from './pipe/date-parse.pipe';
 import { AboutPerfumeHubComponent } from './about-perfume-hub/about-perfume-hub.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserService } from './user.service';
+import { ScheduleCellComponent } from './schedule-cell/schedule-cell.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { UserService } from './user.service';
     ScheduleListComponent,
     DateParsePipe,
     AboutPerfumeHubComponent,
-    AdminComponent
+    AdminComponent,
+    ScheduleCellComponent
   ],
   imports: [
     BrowserModule,

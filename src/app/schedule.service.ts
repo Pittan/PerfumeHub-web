@@ -7,7 +7,7 @@ import { ApiBaseService } from './core/api-base.service';
 export class ScheduleService {
 
   constructor(private apiBaseService: ApiBaseService) { }
-  
+
   /**
    * APIからScheduleを取得します
    * @param id {string} スケジュールのID

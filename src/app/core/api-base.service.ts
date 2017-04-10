@@ -21,7 +21,7 @@ export class ApiBaseService {
     const options = new RequestOptions({
       headers: headers,
       withCredentials: true,
-      search:query
+      search: query
     });
 
     return this.http.get(url, options);
@@ -40,7 +40,7 @@ export class ApiBaseService {
     const options = new RequestOptions({
       headers: headers,
       withCredentials: true,
-      search:query
+      search: query
     });
 
     return this.http.post(url, query, options);
@@ -59,7 +59,7 @@ export class ApiBaseService {
     const options = new RequestOptions({
       headers: headers,
       withCredentials: true,
-      search:query
+      search: query
     });
 
     return this.http.put(url, query, options);

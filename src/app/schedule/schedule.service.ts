@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { Schedule } from './schedule';
-import { ApiBaseService } from './api-base.service';
+import { ApiBaseService } from '../core/api-base.service';
 
 @Injectable()
 export class ScheduleService {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ScheduleService } from '../core/schedule.service';
-import { Schedule } from '../core/schedule';
+import { ScheduleService } from '../schedule.service';
+import { Schedule } from '../schedule';
 
 import { Title } from '@angular/platform-browser';
 

@@ -5,29 +5,23 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DateJpPipe } from './pipe/date-jp.pipe';
 import { HeaderComponent } from './header/header.component';
 import { HeaderService } from './header/header.service';
 import { CoreModule } from './core/core.module';
 
 import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 import { ScheduleListComponent } from './schedule-list/schedule-list.component';
-import { ScheduleService } from './schedule.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { DateParsePipe } from './pipe/date-parse.pipe';
 import { AboutPerfumeHubComponent } from './about-perfume-hub/about-perfume-hub.component';
 import { AdminComponent } from './admin/admin.component';
-import { UserService } from './user.service';
 import { ScheduleCellComponent } from './schedule-cell/schedule-cell.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DateJpPipe,
     HeaderComponent,
     PageNotFoundComponent,
     ScheduleListComponent,
-    DateParsePipe,
     AboutPerfumeHubComponent,
     AdminComponent,
     ScheduleCellComponent
@@ -40,7 +34,7 @@ import { ScheduleCellComponent } from './schedule-cell/schedule-cell.component';
     Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
     CoreModule
   ],
-  providers: [HeaderService, ScheduleService, UserService],
+  providers: [HeaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

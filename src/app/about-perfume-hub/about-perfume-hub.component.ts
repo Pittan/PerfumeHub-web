@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderService } from '../header/header.service';
+import { HeaderService } from '../core/header/header.service';
 import { Title } from '@angular/platform-browser';
 import { environment } from '../../environments/environment';
 

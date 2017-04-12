@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Schedule } from '../schedule';
+import { Schedule } from '../core/schedule';
 
 @Component({
   selector: 'ph-schedule-cell',

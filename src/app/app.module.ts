@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AboutPerfumeHubComponent } from './about-perfume-hub/about-perfume-hub.component';
 import { AdminComponent } from './admin/admin.component';
 import { ScheduleCellComponent } from './schedule-cell/schedule-cell.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ScheduleCellComponent } from './schedule-cell/schedule-cell.component';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
+    SharedModule,
     Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ])
   ],
   providers: [],

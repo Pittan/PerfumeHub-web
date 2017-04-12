@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Angulartics2GoogleAnalytics } from 'angulartics2';
-import { HeaderService } from './header/header.service';
+import { HeaderService } from './core/header/header.service';
 
 @Component({
   selector: 'ph-root',

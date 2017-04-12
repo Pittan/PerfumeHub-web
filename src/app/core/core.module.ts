@@ -15,6 +15,7 @@ import { HeaderService } from './header/header.service';
     HttpModule,
     FormsModule,
   ],
+  exports: [HeaderComponent],
   declarations: [HeaderComponent],
   providers: [ApiBaseService, UserService, ScheduleService, HeaderService]
 })

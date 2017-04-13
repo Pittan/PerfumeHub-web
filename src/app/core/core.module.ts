@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { HeaderService } from './header/header.service';
 import { CookieModule } from 'ngx-cookie';
+import { AppMenuComponent } from './app-menu/app-menu.component';
 
 @NgModule({
   imports: [
@@ -16,8 +17,8 @@ import { CookieModule } from 'ngx-cookie';
     FormsModule,
     CookieModule.forChild()
   ],
-  exports: [HeaderComponent],
-  declarations: [HeaderComponent],
+  exports: [HeaderComponent, AppMenuComponent],
+  declarations: [HeaderComponent, AppMenuComponent],
   providers: [ApiBaseService, UserService, HeaderService]
 })
 export class CoreModule { }

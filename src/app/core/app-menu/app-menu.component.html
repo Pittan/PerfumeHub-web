@@ -1,0 +1,37 @@
+<div class="menu-container">
+
+  <div class="user-info" *ngIf="user">
+    <div class="label">ユーザー情報</div>
+    <div class="profile-container">
+      <div class="icon" [ngStyle]="{'background-image': 'url(' + user?.image_url + ')'}"></div>
+      <div class="user-container">
+        <div class="name">{{user?.name}}(@{{user?.screen_name}})</div>
+        <div class="id">ID: {{user?.id}}</div>
+        <div class="permission-container">
+          <span class="permission-badge">{{user?.permission}}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="menu-label">メニュー</div>
+  <div class="menu-cell" (click)="login()" *ngIf="!user">
+    <svg class="icon-login">
+      <use xlink:href="#login"></use>
+    </svg>
+    <div class="cell-label">ログイン</div>
+  </div>
+  <div class="menu-cell" (click)="logout()" *ngIf="user">
+    <svg class="icon-logout">
+      <use xlink:href="#logout"></use>
+    </svg>
+    <div class="cell-label">ログアウト</div>
+  </div>
+
+  <div class="version-info">
+    <div class="app-icon"></div>
+    <div class="app-name">PerfumeHub</div>
+    <div class="app-version">Web {{appVersion}}</div>
+  </div>
+</div>

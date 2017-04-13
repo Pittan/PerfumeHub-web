@@ -20,6 +20,8 @@ They might well be outsourced to an external stylesheet of course.
 
 <style type="text/css">
 	.svg-list-menu-dims { width: 344.339px; height: 344.339px; }
+	.svg-login-dims { width: 512px; height: 512px; }
+	.svg-logout-dims { width: 512px; height: 512px; }
 </style>
 <!--
 ====================================================================================================
@@ -43,6 +45,8 @@ for further details on how to create this embeddable sprite variant.
 
 <svg width="0" height="0" style="position:absolute">
 		<symbol viewBox="0 0 344.339 344.339" id="list-menu"><path fill="#FFF" d="M0 46.06h344.339v29.52H0zm0 110.446h344.339v29.52H0zm0 112.242h344.339v29.531H0z"/></symbol>
+		<symbol viewBox="0 0 512 512" id="login"><path d="M327.287 246.852l-74.931-76.595c-4.941-5.06-13.039-5.146-18.099-.205-5.06 4.941-5.146 13.056-.205 18.099l53.854 55.057H12.8C5.734 243.2 0 248.934 0 256s5.734 12.8 12.8 12.8h275.098l-53.845 55.057c-4.941 5.043-4.855 13.158.205 18.099 5.06 4.941 13.158 4.855 18.099-.205l75.128-76.8c4.939-5.043 4.854-13.158-.198-18.099z"/><path d="M499.2 0H166.4c-7.066 0-12.8 5.734-12.8 12.8V192h25.6V25.6h307.2v460.8H179.2V320h-25.6v179.2c0 7.066 5.734 12.8 12.8 12.8h332.8c7.066 0 12.8-5.734 12.8-12.8V12.8C512 5.734 506.266 0 499.2 0z"/></symbol>
+		<symbol viewBox="0 0 512 512" id="logout"><path d="M358.401 192V12.8c0-7.066-5.734-12.8-12.8-12.8h-332.8C5.735 0 .001 5.734.001 12.8v486.4c0 7.066 5.734 12.8 12.8 12.8h332.8c7.066 0 12.8-5.734 12.8-12.8V320h-25.6v166.4h-307.2V25.6h307.2V192h25.6z"/><path d="M508.161 246.844l-74.931-76.595c-4.941-5.06-13.047-5.146-18.099-.205s-5.146 13.056-.205 18.099L468.78 243.2H193.673c-7.066 0-12.8 5.734-12.8 12.8 0 7.066 5.734 12.8 12.8 12.8h275.098l-53.854 55.057c-4.941 5.043-4.847 13.158.205 18.099 5.06 4.941 13.158 4.855 18.099-.205l75.128-76.8c4.94-5.051 4.855-13.166-.188-18.107z"/></symbol>
 </svg>
 
 <!--
@@ -83,6 +87,28 @@ embedded above. They may be styled via CSS.
 					</div>
 					<h2>list-menu</h2>
 				</li>
+				<li title="login">
+					<div class="icon-box">
+						
+						<!-- login -->
+						<svg class="svg-login-dims">
+							<use xlink:href="#login"></use>
+						</svg>
+						
+					</div>
+					<h2>login</h2>
+				</li>
+				<li title="logout">
+					<div class="icon-box">
+						
+						<!-- logout -->
+						<svg class="svg-logout-dims">
+							<use xlink:href="#logout"></use>
+						</svg>
+						
+					</div>
+					<h2>logout</h2>
+				</li>
 			</ul>
 
 <!--
@@ -110,7 +136,7 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 
 		</section>
 		<footer>
-			<p>Generated at Thu, 13 Apr 2017 13:45:22 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+			<p>Generated at Thu, 13 Apr 2017 15:05:52 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
 		</footer>
 	</body>
 </html>

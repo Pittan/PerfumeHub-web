@@ -7,12 +7,14 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { HeaderService } from './header/header.service';
+import { CookieModule } from 'ngx-cookie';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpModule,
     FormsModule,
+    CookieModule.forChild()
   ],
   exports: [HeaderComponent],
   declarations: [HeaderComponent],

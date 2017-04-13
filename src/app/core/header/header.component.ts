@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HeaderService } from './header.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'ph-header',
@@ -7,16 +8,34 @@ import { HeaderService } from './header.service';
   styleUrls: ['./header.component.styl']
 })
 
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
 
   public title: string;
+  public isMenuOpen: boolean;
+
+  private subscription = new Subscription();
 
   constructor(private headerService: HeaderService) { }
 
   ngOnInit() {
-    this.headerService.title.subscribe((val: string) => {
+    const titleSubscription = this.headerService.title.subscribe((val: string) => {
       this.title = val;
     });
+    this.subscription.add(titleSubscription);
+
+    const menuStatusSubscription = this.headerService.isMenuOpen.subscribe((isOpen: boolean) => {
+      this.isMenuOpen = isOpen;
+    });
+    this.subscription.add(menuStatusSubscription);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+
+  toggleMenu() {
+    this.headerService.setIsMenuOpen(!this.isMenuOpen);
   }
 
 }

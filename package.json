@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "svg-sprite": "svgo -f src/svg --pretty && svg-sprite --config svg-sprite.json --shape-transform-svgo svgo.json src/svg/*.svg"
+    "svg-sprite": "svgo -f src/svg --pretty && svg-sprite --config svg-sprite.json --shape-transform-svgo svgo.json src/svg/*.svg && gulp svg-sprite-inject"
   },
   "private": true,
   "dependencies": {
@@ -35,6 +35,8 @@
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "codelyzer": "~2.0.0",
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.2.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
     "karma": "~1.4.1",

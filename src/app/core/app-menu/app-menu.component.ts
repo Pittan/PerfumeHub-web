@@ -12,7 +12,7 @@ import { User } from '../user';
 })
 export class AppMenuComponent implements OnInit, OnDestroy {
 
-  @HostBinding('style.display') isMenuOpen: string = 'none';
+  @HostBinding('style.display') isMenuOpen = 'none';
 
   public appVersion: string;
   public user: User = null;

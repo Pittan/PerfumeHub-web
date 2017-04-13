@@ -1,0 +1,12 @@
+{
+  "mode": {
+    "symbol": {
+      "dest": ".",
+      "sprite": "src/assets/spritesheet.svg",
+      "inline": true,
+      "example": {
+        "dest": "src/svg-sprite.html"
+      }
+    }
+  }
+}

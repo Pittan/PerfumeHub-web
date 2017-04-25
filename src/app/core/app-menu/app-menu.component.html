@@ -16,6 +16,15 @@
   </div>
 
   <div class="menu-label">メニュー</div>
+
+  <div class="menu-cell" routerLink="schedule">
+    <div class="cell-label">スケジュール</div>
+  </div>
+
+  <div class="menu-cell" routerLink="about">
+    <div class="cell-label">PerfumeHubについて</div>
+  </div>
+
   <div class="menu-cell" (click)="login()" *ngIf="!user">
     <svg class="icon-login">
       <use xlink:href="#login"></use>

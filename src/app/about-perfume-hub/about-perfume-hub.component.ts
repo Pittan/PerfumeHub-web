@@ -19,7 +19,6 @@ export class AboutPerfumeHubComponent implements OnInit {
   ngOnInit() {
     this.appVersion = environment.version;
     this.titleService.setTitle('About PerfumeHub');
-    this.headerService.setTitle('About PerfumeHub');
 
     // ネイティブ連携とかするようになれば以下みたいな感じで
     // this.nativeAppVersion = 'PerfumeHub-iOS 4.1.0';

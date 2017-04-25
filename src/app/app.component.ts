@@ -11,8 +11,6 @@ export class AppComponent implements OnInit {
 
   constructor(private headerService: HeaderService, angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics) {}
 
-  ngOnInit() {
-    this.headerService.setTitle('PerfumeHub');
-  }
+  ngOnInit() { }
 
 }

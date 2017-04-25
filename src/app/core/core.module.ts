@@ -9,10 +9,12 @@ import { HeaderComponent } from './header/header.component';
 import { HeaderService } from './header/header.service';
 import { CookieModule } from 'ngx-cookie';
 import { AppMenuComponent } from './app-menu/app-menu.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     HttpModule,
     FormsModule,
     CookieModule.forChild()

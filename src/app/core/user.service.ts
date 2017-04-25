@@ -4,6 +4,8 @@ import { Http, RequestOptions } from '@angular/http';
 import { environment } from '../../environments/environment';
 import { User } from './user';
 
+import 'rxjs/add/operator/map';
+
 
 @Injectable()
 export class UserService {

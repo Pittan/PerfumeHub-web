@@ -19,6 +19,10 @@ const routes: Routes = [
     component: AboutPerfumeHubComponent
   },
   {
+    path: 'live',
+    loadChildren: './live/live.module#LiveModule'
+  },
+  {
     path: 'schedule',
     loadChildren: './schedule/schedule.module#ScheduleModule'
   },

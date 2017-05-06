@@ -4,14 +4,21 @@
 <div class="live-open" >開場 {{liveInfo?.open_at | dateParse | date:'y/M/d HH:mm'}}</div>
 <div class="live-start">開演 {{liveInfo?.start_at | dateParse | date:'y/M/d HH:mm'}}</div>
 
-<div class="button-container">
-  <div class="button ph-flex-center participate" (click)="participate()">参加する</div>
-  <div class="button ph-flex-center non-participate" (click)="nonParticipate()">参加しない</div>
-  <div class="button ph-flex-center pending" (click)="pending()">行きたい</div>
+<div class="status-container" *ngIf="userInfo">
+  <div class="button-container">
+    <div class="button ph-flex-center participate" (click)="participate()">参加する</div>
+    <div class="button ph-flex-center non-participate" (click)="nonParticipate()">参加しない</div>
+    <div class="button ph-flex-center pending" (click)="pending()">行きたい</div>
+  </div>
+  <div class="slide-container ph-flex-center">
+    <md-slide-toggle class="slide-toggle" [checked]="tweet" (change)="tweetSwitchChanged()">ステータスの変更をツイートする</md-slide-toggle>
+  </div>
 </div>
-<div class="slide-container ph-flex-center">
-  <md-slide-toggle class="slide-toggle" [checked]="tweet">ステータスの変更をツイートする</md-slide-toggle>
+
+<div class="login-message" *ngIf="!userInfo">
+  他のユーザーと参加ステータスをシェアするためにはログインが必要です
 </div>
+
 
 <div *ngIf="liveInfo">
   <agm-map [latitude]="liveInfo.latitude" [longitude]="liveInfo.longitude" [zoom]="14">

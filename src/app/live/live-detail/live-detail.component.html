@@ -10,7 +10,7 @@
   <div class="button ph-flex-center pending" (click)="pending()">行きたい</div>
 </div>
 <div class="slide-container ph-flex-center">
-  <md-slide-toggle class="slide-toggle" [checked]="tweet">ステータスの変更をツイートする</md-slide-toggle>
+  <md-slide-toggle class="slide-toggle" [checked]="tweet" (change)="tweetSwitchChanged()">ステータスの変更をツイートする</md-slide-toggle>
 </div>
 
 <div *ngIf="liveInfo">

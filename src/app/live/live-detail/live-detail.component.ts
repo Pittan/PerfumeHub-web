@@ -21,6 +21,8 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
   nonParticipant: any[] = null;
   wantToParticipant: any[] = null;
 
+  tweet = true;
+
   private sub: any;
 
   constructor(private route: ActivatedRoute,
@@ -48,7 +50,7 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
 
   participate() {
     const shareText = this.getShareText('参加します');
-    this.liveService.participate(this.id, shareText).subscribe(
+    this.liveService.participate(this.id, this.tweet ? shareText : null).subscribe(
       res => {
         console.log(res);
       }
@@ -57,7 +59,7 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
 
   nonParticipate() {
     const shareText = this.getShareText('参加しません');
-    this.liveService.nonParticipate(this.id, shareText).subscribe(
+    this.liveService.nonParticipate(this.id, this.tweet ? shareText : null).subscribe(
       res => {
         console.log(res);
       }
@@ -66,7 +68,7 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
 
   pending() {
     const shareText = this.getShareText('行きたいです');
-    this.liveService.pending(this.id, shareText).subscribe(
+    this.liveService.pending(this.id, this.tweet ? shareText : null).subscribe(
       res => {
         console.log(res);
       }

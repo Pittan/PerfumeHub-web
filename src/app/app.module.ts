@@ -13,6 +13,9 @@ import { AdminComponent } from './admin/admin.component';
 import { AgmCoreModule } from '@agm/core';
 import { environment } from '../environments/environment';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import 'hammerjs';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,8 @@ import { environment } from '../environments/environment';
     Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
     AgmCoreModule.forRoot({
       apiKey: environment.gmapkey
-    })
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

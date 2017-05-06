@@ -8,12 +8,15 @@ import { LiveDetailComponent } from './live-detail/live-detail.component';
 import { AgmCoreModule } from '@agm/core';
 import { SharedModule } from '../shared/shared.module';
 
+import {MdSlideToggleModule} from '@angular/material';
+
 @NgModule({
   imports: [
     CommonModule,
     LiveRoutingModule,
     AgmCoreModule,
-    SharedModule
+    SharedModule,
+    MdSlideToggleModule
   ],
   declarations: [LiveListComponent, LiveDetailComponent],
   providers: [LiveService]

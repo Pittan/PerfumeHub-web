@@ -6,6 +6,8 @@ import { forEach } from '@angular/router/src/utils/collection';
 import { DateParsePipe } from '../../shared/date-parse.pipe';
 import { DateJpPipe } from '../../shared/date-jp.pipe';
 import { DatePipe } from '@angular/common';
+import { UserService } from '../../core/user.service';
+import { User } from '../../core/user';
 
 @Component({
   selector: 'ph-live-detail',
@@ -22,11 +24,13 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
   wantToParticipant: any[] = null;
 
   tweet = true;
+  userInfo: User = null;
 
   private sub: any;
 
   constructor(private route: ActivatedRoute,
-              private liveService: LiveService) { }
+              private liveService: LiveService,
+              private userService: UserService) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -34,6 +38,14 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
       // In a real app: dispatch action to load the details here.
       this.getLive();
     });
+
+    this.userService.getUser().subscribe(
+      res => {
+        if (res.name) {
+          this.userInfo = res;
+        }
+      }
+    );
   }
 
   private getLive() {

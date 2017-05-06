@@ -10,6 +10,11 @@ import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AboutPerfumeHubComponent } from './about-perfume-hub/about-perfume-hub.component';
 import { AdminComponent } from './admin/admin.component';
+import { AgmCoreModule } from '@agm/core';
+import { environment } from '../environments/environment';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import 'hammerjs';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,11 @@ import { AdminComponent } from './admin/admin.component';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ])
+    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
+    AgmCoreModule.forRoot({
+      apiKey: environment.gmapkey
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

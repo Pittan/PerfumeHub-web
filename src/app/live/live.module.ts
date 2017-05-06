@@ -5,11 +5,15 @@ import { LiveRoutingModule } from './live-routing.module';
 import { LiveListComponent } from './live-list/live-list.component';
 import { LiveService } from './live.service';
 import { LiveDetailComponent } from './live-detail/live-detail.component';
+import { AgmCoreModule } from '@agm/core';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    LiveRoutingModule
+    LiveRoutingModule,
+    AgmCoreModule,
+    SharedModule
   ],
   declarations: [LiveListComponent, LiveDetailComponent],
   providers: [LiveService]

@@ -32,16 +32,19 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
       // In a real app: dispatch action to load the details here.
-
-      this.liveService.getLive(this.id).subscribe(
-        data => {
-          this.liveInfo = data.live as Live;
-          this.participant = data.participant;
-          this.nonParticipant = data.nonParticipant;
-          this.wantToParticipant = data.pending;
-        }
-      );
+      this.getLive();
     });
+  }
+
+  private getLive() {
+    this.liveService.getLive(this.id).subscribe(
+      data => {
+        this.liveInfo = data.live as Live;
+        this.participant = data.participant;
+        this.nonParticipant = data.nonParticipant;
+        this.wantToParticipant = data.pending;
+      }
+    );
   }
 
   ngOnDestroy() {
@@ -53,6 +56,7 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
     this.liveService.participate(this.id, this.tweet ? shareText : null).subscribe(
       res => {
         console.log(res);
+        this.getLive();
       }
     );
   }
@@ -62,6 +66,7 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
     this.liveService.nonParticipate(this.id, this.tweet ? shareText : null).subscribe(
       res => {
         console.log(res);
+        this.getLive();
       }
     );
   }
@@ -71,6 +76,7 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
     this.liveService.pending(this.id, this.tweet ? shareText : null).subscribe(
       res => {
         console.log(res);
+        this.getLive();
       }
     );
   }

@@ -11,17 +11,17 @@ export class LiveService {
       .map(res => res.json());
   }
 
-  participate(id: number, shareText: string) {
+  participate(id: string, shareText: string) {
     return this.apiBaseService.post('/live/' + id + '/participate', {share_text: shareText})
       .map(res => res.json());
   }
 
-  pending(id: number, shareText: string) {
+  pending(id: string, shareText: string) {
     return this.apiBaseService.post('/live/' + id + '/want-to-participate', {share_text: shareText})
       .map(res => res.json());
   }
 
-  nonParticipate(id: number, shareText: string) {
+  nonParticipate(id: string, shareText: string) {
     return this.apiBaseService.post('/live/' + id + '/non-participate', {share_text: shareText})
       .map(res => res.json());
   }

@@ -16,7 +16,7 @@ import { User } from '../../core/user';
 })
 export class LiveDetailComponent implements OnInit, OnDestroy {
 
-  id: number;
+  id: string;
   liveInfo: Live = null;
 
   participant: any[] = null;
@@ -34,7 +34,7 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id']; // (+) converts string 'id' to a number
+      this.id = params['id']; // (+) converts string 'id' to a number
       // In a real app: dispatch action to load the details here.
       this.getLive();
     });

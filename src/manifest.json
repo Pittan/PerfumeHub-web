@@ -1,0 +1,20 @@
+{
+  "short_name": "PerfumeHub",
+  "name": "PerfumeHub",
+  "icons": [
+    {
+      "src": "assets/launcher-icon@2x.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "assets/launcher-icon@3x.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#489BC6",
+  "theme_color": "#489BC6",
+  "display": "standalone"
+}

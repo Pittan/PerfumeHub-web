@@ -10,7 +10,9 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "404.html"
+        "404.html",
+        "worker-basic.min.js",
+        "manifest.json"
       ],
       "index": "index.html",
       "main": "main.ts",

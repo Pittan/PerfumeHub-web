@@ -8,4 +8,12 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .then( () => {
+    // worker-basic.min.jsはnode_modules下にあったものをsrc直下にコピーした
+    // serviceWorker非対応アプリでもクラッシュしないようにする
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/worker-basic.min.js');
+    }
+  });

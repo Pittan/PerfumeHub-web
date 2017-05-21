@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "svg-sprite": "svgo -f src/svg --pretty && svg-sprite --config svg-sprite.json --shape-transform-svgo svgo.json src/svg/*.svg && gulp svg-sprite-inject"
+    "svg-sprite": "svgo -f src/svg --pretty && svg-sprite --config svg-sprite.json --shape-transform-svgo svgo.json src/svg/*.svg && gulp svg-sprite-inject",
+    "sw-manifest": "ngu-sw-manifest --out dist/ngsw-manifest.json"
   },
   "private": true,
   "dependencies": {

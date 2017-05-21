@@ -11,14 +11,13 @@ export class NotificationEditComponent implements OnInit {
   public header: string;
   public body: string;
   public website_url: string;
-  // public notification_type: string;
-
-
-
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  submit() {
+    alert('通知を送る予定')
+  }
 }

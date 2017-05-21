@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren: './schedule/schedule.module#ScheduleModule'
   },
   {
+    path: 'notification',
+    loadChildren: './notification/notification.module#NotificationModule'
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }

@@ -18,6 +18,6 @@ export class NotificationEditComponent implements OnInit {
   }
 
   submit() {
-    alert('通知を送る予定')
+    alert('通知を送る予定');
   }
 }

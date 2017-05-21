@@ -19,13 +19,6 @@
   他のユーザーと参加ステータスをシェアするためにはログインが必要です
 </div>
 
-
-<div *ngIf="liveInfo">
-  <agm-map [latitude]="liveInfo.latitude" [longitude]="liveInfo.longitude" [zoom]="14">
-    <agm-marker [latitude]="liveInfo.latitude" [longitude]="liveInfo.longitude"></agm-marker>
-  </agm-map>
-</div>
-
 <div class="participant-list-title">行きます</div>
 <div class="participant-list">
   <div class="user-cell" *ngFor="let user of participant">

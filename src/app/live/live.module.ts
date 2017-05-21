@@ -5,7 +5,6 @@ import { LiveRoutingModule } from './live-routing.module';
 import { LiveListComponent } from './live-list/live-list.component';
 import { LiveService } from './live.service';
 import { LiveDetailComponent } from './live-detail/live-detail.component';
-import { AgmCoreModule } from '@agm/core';
 import { SharedModule } from '../shared/shared.module';
 
 import {MdSlideToggleModule} from '@angular/material';
@@ -14,7 +13,6 @@ import {MdSlideToggleModule} from '@angular/material';
   imports: [
     CommonModule,
     LiveRoutingModule,
-    AgmCoreModule,
     SharedModule,
     MdSlideToggleModule
   ],

@@ -9,7 +9,7 @@ export class AuthGuardService {
   constructor(private userService: UserService,
               private router: Router) { }
 
-  canLoad(route: Route): boolean|Observable<boolean>{
+  canLoad(route: Route): boolean|Observable<boolean> {
     return this.userService.getUser()
       .map(data => {
         if (data) {

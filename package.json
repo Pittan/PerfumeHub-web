@@ -36,11 +36,12 @@
     "zone.js": "0.8.5"
   },
   "devDependencies": {
-    "@angular/cli": "^1.0.0",
+    "@angular/cli": "^1.0.5",
     "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "codelyzer": "~2.0.0",
+    "coveralls": "^2.13.1",
     "gulp": "^3.9.1",
     "gulp-inject": "^4.2.0",
     "jasmine-core": "~2.5.2",

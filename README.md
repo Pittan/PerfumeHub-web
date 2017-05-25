@@ -1,7 +1,7 @@
 # PerfumeHub-web  
 ![Logo](https://app.pittankopta.net/pta/info/img/perfumehub-icon.png)  
-[![Build Status](https://travis-ci.org/Pittan/PerfumeHub-web.svg?branch=master)](https://travis-ci.org/Pittan/PerfumeHub-web)  
-
+[![Build Status](https://travis-ci.org/Pittan/PerfumeHub-web.svg?branch=master)](https://travis-ci.org/Pittan/PerfumeHub-web)
+[![Coverage Status](https://coveralls.io/repos/github/Pittan/PerfumeHub-web/badge.svg?branch=master)](https://coveralls.io/github/Pittan/PerfumeHub-web?branch=master)
 PerfumeHubのWeb版です。プラットフォーム関係なく、ブラウザ上で動作するアプリケーションです。  
 このプロジェクトは [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.4 で作成されました。
 

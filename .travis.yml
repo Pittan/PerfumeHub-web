@@ -30,9 +30,13 @@ before_script:
 script:
   - ng -v
   - ng lint
-  - ng test --single-run --progress false --reporters dots
+  - ng test --single-run --progress false --reporters coverage-istanbul --code-coverage
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - ng build --prod --progress false
   - yarn sw-manifest
 
 after_success:
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && firebase deploy --token $FIREBASE_TOKEN
+env:
+  global:
+  - secure: VswEqjLbeQ0Lawrf34NlhTegTw2n8E0AahdOlbSdR4Gyi6RIAiDqdSvsEizhDYb0y1HxZRMngNQYnbas8OAMkk0SK6DigqGz+DrlwkgHRJjrlsb7uHXhUZRBdAr5A96HZyQmHR6puqz1VCqq2w90VOj7KUZwLVD4xTwv2AiyFyqNVGVW3Rzz0kCKmiGj/XUTJwXsbYoqiW12ctU2p/1CEB1Vz1xO6WDW2TNa1PREFtIp2u0j8eU3Gq6NgdPRMkTFzYmzP98tBxgP4GyKAqigPZq/RtD+Kd/PI84I7Ay1eMZaMaYdAilNyiP+HeDgNqXBo4jUkzKSXlWKO5Lv8XZtyKBxUHUSdcZdLRw/4BJHelqCpCiVkYMVFW0zyAnyfcY+ORWmDzShg1sAPTcHg3+aOMlQjdSIy/ZWmomc25ZYhmR6+im7VvfsJjG7ObqPWp4c4F6Kn9O1FjVNwww5KiHwl+ovp1kfdCeIIBu/bWbjZ5nclkrXtthlnb+0wmyZ1M9v8s5vT0qotbMLngI/xY8OpuLlfzC/qhDTccArwracHTK+cUwKAQD4mije36r7J9pZWnevEBznFVTqdxq5QPRj2mTYyj7RvbfRUh/6nb7EJLe7ORJ6CXoTEayt9bezTUgq4G4VRWTs7DTVZAHKwWBK41E/D5SZ8DeaXBgMt2ucKhE=

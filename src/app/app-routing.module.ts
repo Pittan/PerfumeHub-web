@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AboutPerfumeHubComponent } from './about-perfume-hub/about-perfume-hub.component';
 import { AdminComponent } from './admin/admin.component';
+import { AuthGuardService } from './core/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -28,7 +29,8 @@ const routes: Routes = [
   },
   {
     path: 'notification',
-    loadChildren: './notification/notification.module#NotificationModule'
+    loadChildren: './notification/notification.module#NotificationModule',
+    canLoad: [AuthGuardService]
   },
   {
     path: '**',
@@ -38,6 +40,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuardService]
 })
 export class AppRoutingModule { }

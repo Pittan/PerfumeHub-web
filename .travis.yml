@@ -33,7 +33,6 @@ script:
   - ng test --single-run --progress false --reporters coverage-istanbul --code-coverage
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - ng build --prod --progress false
-  - yarn sw-manifest
 
 after_success:
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && firebase deploy --token $FIREBASE_TOKEN

@@ -30,7 +30,7 @@ describe('ScheduleService', () => {
       conn.mockRespond(new Response(ops));
     });
 
-    schedule.fetchSchedule().subscribe((schedules: Schedule[]) => {
+    schedule.fetchScheduleList().subscribe((schedules: Schedule[]) => {
       expect(schedules).not.toBeNull();
       expect(schedules[0].body).toBe('hogehoge');
     });

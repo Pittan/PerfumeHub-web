@@ -11,6 +11,11 @@ export class LiveService {
       .map(res => res.json());
   }
 
+  getLiveList() {
+    return this.apiBaseService.get('lives/')
+      .map(res => res.json());
+  }
+
   participate(id: string, shareText: string) {
     return this.apiBaseService.post('/live/' + id + '/participate', {share_text: shareText})
       .map(res => res.json());

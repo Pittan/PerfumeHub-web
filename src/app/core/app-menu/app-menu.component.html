@@ -1,4 +1,5 @@
-<div class="menu-container">
+<div class="dismiss-box" [@bgState]="menuState" (click)="dismiss()"></div>
+<div class="menu-container" [@menuState]="menuState" (@menuState.done)="onAnimeDone()">
 
   <div class="user-info" *ngIf="user">
     <div class="label">ユーザー情報</div>

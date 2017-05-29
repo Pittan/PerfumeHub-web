@@ -106,4 +106,8 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
     return name + formattedDate + ' に' + text + ' ' + location.href + ' #ticklir';
   }
 
+  login() {
+    this.userService.login(window.location.href);
+  }
+
 }

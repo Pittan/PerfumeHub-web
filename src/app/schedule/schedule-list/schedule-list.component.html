@@ -1,13 +1,23 @@
 <div class="page-title">今日のPerfume</div>
 <div class="date">{{date | dateJp:'y/M/d(EEE)'}}</div>
 
-<div class="schedule-list" *ngIf="schedules.length > 0">
+<div class="ticklir-link" routerLink="/live">
+  ライブの参加状況をTwitterでシェアしよう！<br>
+  ここをタップでライブ一覧を表示します
+</div>
+
+
+<div class="schedule-list" *ngIf="schedules.length > 0; else no_schedule">
   <ph-schedule-cell *ngFor="let schedule of schedules" [schedule]="schedule"></ph-schedule-cell>
 </div>
 
-<div class="no-schedule" *ngIf="!loading && schedules.length == 0">
-  <div class="message">
-    今日のPerfume<br>
-    情報はありません
+<ng-template #no_schedule>
+  <div class="no-schedule">
+    <div class="message">
+      今日のPerfume<br>
+      情報はありません
+    </div>
   </div>
-</div>
+</ng-template>
+
+

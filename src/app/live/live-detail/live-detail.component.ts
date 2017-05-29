@@ -53,7 +53,7 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
       data => {
         this.liveInfo = data.live as Live;
         this.participant = data.participant;
-        this.nonParticipant = data.nonParticipant;
+        this.nonParticipant = data.non_participant;
         this.wantToParticipant = data.pending;
       }
     );

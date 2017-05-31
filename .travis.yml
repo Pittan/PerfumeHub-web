@@ -2,7 +2,7 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - "6.10"
+  - "8.0.0"
 
 addons:
 apt:
@@ -12,7 +12,8 @@ apt:
     - google-chrome-stable
     - google-chrome-beta
 
-cache: yarn
+cache:
+  - ~/.npm
 
 before_install:
   - export CHROME_BIN=chromium-browser
@@ -20,12 +21,13 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 before_script:
-  - yarn global add firebase-tools
-  - yarn global add @angular/cli
-  - export PATH="$PATH:`yarn global bin`"
-#  - npm install -g firebase-tools
-#  - npm install -g @angular/cli
-  - yarn
+#  - yarn global add firebase-tools
+#  - yarn global add @angular/cli
+#  - export PATH="$PATH:`yarn global bin`"
+  - npm install -g firebase-tools
+  - npm install -g @angular/cli
+#  - yarn
+  - npm install
 
 script:
   - ng -v

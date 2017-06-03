@@ -9,6 +9,8 @@ export class HeaderService {
 
   public isMenuOpen: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
+  public color: BehaviorSubject<string> = new BehaviorSubject<string>('#489BC6');
+
   constructor(private router: Router) {
     router.events
       .filter(event => event instanceof NavigationStart)
@@ -23,6 +25,10 @@ export class HeaderService {
 
   setIsMenuOpen(state: boolean) {
     this.isMenuOpen.next(state);
+  }
+
+  setColor(color: string) {
+    this.color.next('#' + color);
   }
 
 }

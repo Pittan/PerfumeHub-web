@@ -41,7 +41,7 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
 
     this.userService.getUser().subscribe(
       res => {
-        if (res.name) {
+        if (res && res.name) {
           this.userInfo = res;
         }
       }

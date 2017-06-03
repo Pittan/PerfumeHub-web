@@ -4,4 +4,5 @@ export interface User {
   image_url: string;
   name: string;
   permission: string;
+  twitter_id?: string;
 }

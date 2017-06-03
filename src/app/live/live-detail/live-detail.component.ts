@@ -97,6 +97,10 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
     this.tweet = !this.tweet;
   }
 
+  userClicked(user: User) {
+    window.open('https://twitter.com/intent/user?user_id=' + user.twitter_id , '_blank');
+  }
+
   private getShareText(text) {
     const name = this.liveInfo.name + ' ' + this.liveInfo.place_for_search + '公演';
     const dateParse = new DateParsePipe();

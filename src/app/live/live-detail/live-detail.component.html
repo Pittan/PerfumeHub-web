@@ -21,7 +21,7 @@
 
 <div class="participant-list-title">行きます</div>
 <div class="participant-list">
-  <div class="user-cell" *ngFor="let user of participant">
+  <div class="user-cell" *ngFor="let user of participant" (click)="userClicked(user)">
     <div class="user-icon" [ngStyle]="{'background-image': 'url(' + user.image_url + ')'}"></div>
     <div class="user-name">{{user.name}}</div>
   </div>
@@ -29,7 +29,7 @@
 
 <div class="participant-list-title">行きたい</div>
 <div class="participant-list">
-  <div class="user-cell" *ngFor="let user of wantToParticipant">
+  <div class="user-cell" *ngFor="let user of wantToParticipant" (click)="userClicked(user)">
     <div class="user-icon" [ngStyle]="{'background-image': 'url(' + user.image_url + ')'}"></div>
     <div class="user-name">{{user.name}}</div>
   </div>
@@ -37,7 +37,7 @@
 
 <div class="participant-list-title">行けません</div>
 <div class="participant-list">
-  <div class="user-cell" *ngFor="let user of nonParticipant">
+  <div class="user-cell" *ngFor="let user of nonParticipant" (click)="userClicked(user)">
     <div class="user-icon" [ngStyle]="{'background-image': 'url(' + user.image_url + ')'}"></div>
     <div class="user-name">{{user.name}}</div>
   </div>

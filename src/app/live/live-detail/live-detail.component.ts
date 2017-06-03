@@ -8,7 +8,7 @@ import { DateJpPipe } from '../../shared/date-jp.pipe';
 import { DatePipe } from '@angular/common';
 import { UserService } from '../../core/user.service';
 import { User } from '../../core/user';
-import { Subscription } from "rxjs/Subscription";
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'ph-live-detail',
@@ -114,7 +114,7 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
 
   /**
    * ユーザーをタップしたとき
-   * @param user 
+   * @param user
    */
   userClicked(user: User) {
     window.open('https://twitter.com/intent/user?user_id=' + user.twitter_id , '_blank');
@@ -122,7 +122,7 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
 
   /**
    * シェア用の文章を生成します
-   * @param text 
+   * @param text
    */
   private getShareText(text) {
     const name = this.liveInfo.name + ' ' + this.liveInfo.place_for_search + '公演';

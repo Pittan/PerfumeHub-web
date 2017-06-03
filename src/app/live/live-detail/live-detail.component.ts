@@ -8,6 +8,7 @@ import { DateJpPipe } from '../../shared/date-jp.pipe';
 import { DatePipe } from '@angular/common';
 import { UserService } from '../../core/user.service';
 import { User } from '../../core/user';
+import { Subscription } from "rxjs/Subscription";
 
 @Component({
   selector: 'ph-live-detail',
@@ -26,18 +27,17 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
   tweet = true;
   userInfo: User = null;
 
-  private sub: any;
+  private sub: Subscription = new Subscription();
 
   constructor(private route: ActivatedRoute,
               private liveService: LiveService,
               private userService: UserService) { }
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      this.id = params['id']; // (+) converts string 'id' to a number
-      // In a real app: dispatch action to load the details here.
+    this.sub.add(this.route.params.subscribe(params => {
+      this.id = params['id'];
       this.getLive();
-    });
+    }));
 
     this.userService.getUser().subscribe(
       res => {
@@ -48,6 +48,13 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
     );
   }
 
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
+  /**
+   * ライブの情報をAPIから取得します
+   */
   private getLive() {
     this.liveService.getLive(this.id).subscribe(
       data => {
@@ -59,10 +66,9 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
     );
   }
 
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
-
+  /**
+   * 「参加する」をクリックしたとき
+   */
   participate() {
     const shareText = this.getShareText('参加します');
     this.liveService.participate(this.id, this.tweet ? shareText : null).subscribe(
@@ -73,6 +79,9 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * 「参加しない」をクリックしたとき
+   */
   nonParticipate() {
     const shareText = this.getShareText('参加しません');
     this.liveService.nonParticipate(this.id, this.tweet ? shareText : null).subscribe(
@@ -83,6 +92,9 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * 「行きたい」をクリックしたとき
+   */
   pending() {
     const shareText = this.getShareText('行きたいです');
     this.liveService.pending(this.id, this.tweet ? shareText : null).subscribe(
@@ -93,14 +105,25 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * ツイートするスイッチをタップしたとき
+   */
   tweetSwitchChanged() {
     this.tweet = !this.tweet;
   }
 
+  /**
+   * ユーザーをタップしたとき
+   * @param user 
+   */
   userClicked(user: User) {
     window.open('https://twitter.com/intent/user?user_id=' + user.twitter_id , '_blank');
   }
 
+  /**
+   * シェア用の文章を生成します
+   * @param text 
+   */
   private getShareText(text) {
     const name = this.liveInfo.name + ' ' + this.liveInfo.place_for_search + '公演';
     const dateParse = new DateParsePipe();
@@ -110,6 +133,9 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
     return name + formattedDate + ' に' + text + ' ' + location.href + ' #ticklir';
   }
 
+  /**
+   * ログインする
+   */
   login() {
     this.userService.login(window.location.href);
   }

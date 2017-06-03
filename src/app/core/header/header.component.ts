@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { HeaderService } from './header.service';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   public title: string;
   public isMenuOpen: boolean;
+  @HostBinding('style.backgroundColor') color: string;
 
   private subscription = new Subscription();
 
@@ -27,6 +28,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.isMenuOpen = isOpen;
     });
     this.subscription.add(menuStatusSubscription);
+
+    this.subscription.add(this.headerService.color.subscribe((color: string) => {
+      this.color = color;
+    }));
   }
 
   ngOnDestroy() {

@@ -1,6 +1,6 @@
 import { DateJpPipe } from './date-jp.pipe';
 
-fdescribe('DatePipeJpPipe', () => {
+describe('DatePipeJpPipe', () => {
   it('create an instance', () => {
     const pipe = new DateJpPipe();
     expect(pipe).toBeTruthy();

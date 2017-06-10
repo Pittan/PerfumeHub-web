@@ -7,6 +7,12 @@ export class ApiBaseService {
 
   constructor(private http: Http) { }
 
+  /**
+   * GETリクエストを送ります
+   * @param path
+   * @param param
+   * @returns {Observable<Response>}
+   */
   get(path: string, param?: Object) {
 
     const query = new URLSearchParams();
@@ -27,6 +33,12 @@ export class ApiBaseService {
     return this.http.get(url, options);
   }
 
+  /**
+   * POSTリクエストを送ります
+   * @param path
+   * @param param
+   * @returns {Observable<Response>}
+   */
   post(path: string, param?: Object) {
     const query = new URLSearchParams();
     if (param) {
@@ -40,12 +52,17 @@ export class ApiBaseService {
     const options = new RequestOptions({
       headers: headers,
       withCredentials: true,
-      search: query
     });
 
     return this.http.post(url, query, options);
   }
 
+  /**
+   * PUTリクエストを送ります
+   * @param path
+   * @param param
+   * @returns {Observable<Response>}
+   */
   put(path: string, param?: Object) {
     const query = new URLSearchParams();
     if (param) {
@@ -59,12 +76,16 @@ export class ApiBaseService {
     const options = new RequestOptions({
       headers: headers,
       withCredentials: true,
-      search: query
     });
 
     return this.http.put(url, query, options);
   }
 
+  /**
+   * DELETEリクエストを送ります
+   * @param path
+   * @returns {Observable<Response>}
+   */
   delete(path: string) {
     const url = environment.endpoint + path;
     const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'});

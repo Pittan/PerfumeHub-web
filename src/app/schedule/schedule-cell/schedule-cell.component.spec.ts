@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ScheduleCellComponent } from './schedule-cell.component';
 
-describe('ScheduleCellComponent', () => {
+xdescribe('ScheduleCellComponent', () => {
   let component: ScheduleCellComponent;
   let fixture: ComponentFixture<ScheduleCellComponent>;
 

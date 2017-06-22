@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AuthGuardService } from './core/auth-guard.service';
+import { AuthGuard } from './core/auth.guard';
 
 const routes: Routes = [
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path: 'notification',
     loadChildren: './notification/notification.module#NotificationModule',
-    canLoad: [AuthGuardService]
+    canLoad: [AuthGuard]
   },
   {
     path: '**',
@@ -31,6 +31,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthGuardService]
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }

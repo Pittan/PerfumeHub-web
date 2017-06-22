@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LiveDetailComponent } from './live-detail.component';
 
-describe('LiveDetailComponent', () => {
+xdescribe('LiveDetailComponent', () => {
   let component: LiveDetailComponent;
   let fixture: ComponentFixture<LiveDetailComponent>;
 

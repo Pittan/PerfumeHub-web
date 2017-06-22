@@ -1,14 +1,21 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Route, Router, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, CanLoad, Route, Router, RouterStateSnapshot } from '@angular/router';
 import { UserService } from './user.service';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 @Injectable()
-export class AuthGuardService {
+export class AuthGuard implements CanActivate, CanLoad {
 
   constructor(private userService: UserService,
               private router: Router) { }
 
+    /**
+     * LazyLoadingなModuleをLoadさせる前に
+     * 読み込みしていいかチェックするGuard
+     * @param route
+     * @returns {Observable<R>}
+     */
   canLoad(route: Route): boolean|Observable<boolean> {
     return this.userService.getUser()
       .map(data => {
@@ -25,6 +32,13 @@ export class AuthGuardService {
       });
   }
 
+    /**
+     * コンポーネントをActivateできるか
+     * チェックするGuard
+     * @param route
+     * @param state
+     * @returns {Observable<R>}
+     */
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     return this.userService.getUser()
       .map( data => {

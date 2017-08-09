@@ -1,0 +1,24 @@
+.loader
+  background-color rgba(255, 255, 255, 0.7)
+  height 100%
+  width 100%
+  top 0
+  left 0
+  position absolute
+  flex-direction column
+
+.loading-svg
+  height 65px
+  width 65px
+  animation spinner .5s infinite linear
+  fill #489BC6
+  transform translateZ(0)
+
+.loading-description
+  font-size 12px
+
+@keyframes spinner
+  from
+    transform rotate(0deg)
+  to
+    transform rotate(360deg)

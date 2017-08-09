@@ -4,6 +4,7 @@ import { ScheduleService } from '../schedule.service';
 import { Schedule } from '../schedule';
 
 import { Title } from '@angular/platform-browser';
+import { LoadingSpinnerService } from '../../core/loading-spinner/loading-spinner.service';
 
 @Component({
   selector: 'ph-schedule-list',
@@ -17,7 +18,10 @@ export class ScheduleListComponent implements OnInit {
   public loading = true;
 
   constructor(private scheduleService: ScheduleService,
-              private titleService: Title) { }
+              private titleService: Title,
+              private spinner: LoadingSpinnerService) {
+    this.spinner.show();
+  }
 
   ngOnInit() {
     this.titleService.setTitle('今日のPerfume');
@@ -26,6 +30,7 @@ export class ScheduleListComponent implements OnInit {
       data => {
         this.loading = false;
         this.schedules = data;
+        this.spinner.hide();
       }
     );
 

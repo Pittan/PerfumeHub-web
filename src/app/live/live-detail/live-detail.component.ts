@@ -9,6 +9,7 @@ import { DatePipe } from '@angular/common';
 import { UserService } from '../../core/user.service';
 import { User } from '../../core/user';
 import { Subscription } from 'rxjs/Subscription';
+import { LoadingSpinnerService } from '../../core/loading-spinner/loading-spinner.service';
 
 @Component({
   selector: 'ph-live-detail',
@@ -31,7 +32,10 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute,
               private liveService: LiveService,
-              private userService: UserService) { }
+              private userService: UserService,
+              private spinner: LoadingSpinnerService) {
+    spinner.show();
+  }
 
   ngOnInit() {
     this.sub.add(this.route.params.subscribe(params => {
@@ -62,6 +66,7 @@ export class LiveDetailComponent implements OnInit, OnDestroy {
         this.participant = data.participant;
         this.nonParticipant = data.non_participant;
         this.wantToParticipant = data.pending;
+        this.spinner.hide();
       }
     );
   }

@@ -12,6 +12,7 @@ import { AppMenuComponent } from './app-menu/app-menu.component';
 import { RouterModule } from '@angular/router';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { LoadingSpinnerService } from './loading-spinner/loading-spinner.service';
+import { NativeBridgeService } from './native-bridge.service';
 
 @NgModule({
   imports: [
@@ -23,6 +24,6 @@ import { LoadingSpinnerService } from './loading-spinner/loading-spinner.service
   ],
   exports: [HeaderComponent, AppMenuComponent, LoadingSpinnerComponent],
   declarations: [HeaderComponent, AppMenuComponent, LoadingSpinnerComponent],
-  providers: [ApiBaseService, UserService, HeaderService, LoadingSpinnerService]
+  providers: [ApiBaseService, UserService, HeaderService, LoadingSpinnerService, NativeBridgeService]
 })
 export class CoreModule { }

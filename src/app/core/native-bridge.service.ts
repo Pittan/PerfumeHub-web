@@ -25,7 +25,7 @@ export class NativeBridgeService {
       };
       this.bridge.registerHandler = (name, callback) => {
         console.log('Register handler: ' + name);
-      }; 
+      };
       return;
     }
 

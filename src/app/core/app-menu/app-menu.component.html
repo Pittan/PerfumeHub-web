@@ -26,6 +26,10 @@
     <div class="cell-label">ライブ</div>
   </div>
 
+  <div class="menu-cell" routerLink="notification/new">
+    <div class="cell-label">通知(master以上)</div>
+  </div>
+
   <div class="menu-cell" (click)="login()" *ngIf="!user">
     <svg class="icon-login">
       <use xlink:href="#login"></use>

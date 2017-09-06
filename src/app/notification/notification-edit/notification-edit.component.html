@@ -78,6 +78,27 @@
     </div>
   </div>
 
+  <!-- 送信日時 -->
+  <div class="schedule-element">
+    <div class="label">送信するタイミング</div>
+    <div class="description">今すぐ送信するか、日時を指定して送信できます</div>
+    <div class="input-container">
+      <select name="transition" class="select" [(ngModel)]="timeToSend">
+        <option value="immediately" selected>今すぐ送信</option>
+        <option value="custom">日時を指定する</option>
+      </select>
+      <svg viewBox="0 0 12 14" class="triangle"><path d="M0 0l12 7-12 7z"></path></svg>
+    </div>
+  </div>
+
+  <div class="schedule-element" *ngIf="timeToSend == 'custom'">
+    <div class="label">送信日時</div>
+    <div class="description">たぶん秒まで正確には送れないと思います。<br>例) 2017-12-31 12:34:56</div>
+    <div class="input-container">
+      <input type="text" class="schedule-input" name="custom_time" [(ngModel)]="customTimeToSend">
+    </div>
+  </div>
+
   <div class="button ph-flex-center" (click)="submit()">
     送信
   </div>

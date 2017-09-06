@@ -15,6 +15,8 @@ export class NotificationEditComponent implements OnInit {
   public image_url: string;
   public website_url: string;
   public transition = 'PHNewsTransition';
+  public timeToSend = 'immediately';
+  public customTimeToSend = '';
 
   constructor(private apiBase: ApiBaseService) { }
 
@@ -30,7 +32,8 @@ export class NotificationEditComponent implements OnInit {
       image_url: this.image_url,
       channel: null,
       url: null,
-      transition: null
+      transition: null,
+      date: null
     };
 
     if (this.channel !== 'all') {
@@ -43,6 +46,14 @@ export class NotificationEditComponent implements OnInit {
 
     if (this.notificationType === 'pta') {
       param.transition = this.transition;
+    }
+
+    if (this.timeToSend === 'immediately' || this.customTimeToSend === '') {
+      param.date = null;
+    }
+
+    if (this.timeToSend === 'custom' && this.customTimeToSend) {
+      param.date = this.customTimeToSend;
     }
 
     if (confirm('送信します。よろしいですか？')) {

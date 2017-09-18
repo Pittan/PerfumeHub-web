@@ -6,6 +6,6 @@
 export const environment = {
   production: false,
   endpoint: 'http://dev.api.pittankopta.net/pta/v3/',
-  version: '0.1.0-dev',
+  version: '0.2.0-dev',
   gmapkey: 'AIzaSyD1yLwDtOP8E3ocPWp6cRFH4MH0XTa56To'
 };

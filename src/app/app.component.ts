@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     if (this.nativeBridge.isApp()) {
-      this.nativeBridge.registerHandler('setThemeColor', this.setThemeColor);
+      this.nativeBridge.registerHandler('setThemeColor', (data, callback) => { this.setThemeColor(data, callback) });
 
       // アプリ側にWebの準備ができたことを伝える
       this.nativeBridge.callHandler('AppReady', {}, responseData => {});

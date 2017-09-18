@@ -18,6 +18,10 @@ const routes: Routes = [
     loadChildren: './schedule/schedule.module#ScheduleModule'
   },
   {
+    path: 'settings',
+    loadChildren: './settings/settings.module#SettingsModule'
+  },
+  {
     path: 'notification',
     loadChildren: './notification/notification.module#NotificationModule',
     canLoad: [AuthGuard]

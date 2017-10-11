@@ -36,10 +36,10 @@ export class LoadingSpinnerComponent implements OnInit, OnDestroy {
   constructor(private spinnerService: LoadingSpinnerService) { }
 
   ngOnInit() {
-    this.spinnerService.showSpinner.subscribe(state => {
-      // this.showSpinner = state;
-      this.spinnerState = state ? 'active' : 'inactive';
-      if (state) {
+    this.spinnerService.showSpinner.subscribe(_state => {
+      // this.showSpinner = _state;
+      this.spinnerState = _state ? 'active' : 'inactive';
+      if (_state) {
         this.showSpinnerContainer = 'block';
       }
     });

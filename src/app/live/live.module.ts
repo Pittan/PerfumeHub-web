@@ -7,14 +7,14 @@ import { LiveService } from './live.service';
 import { LiveDetailComponent } from './live-detail/live-detail.component';
 import { SharedModule } from '../shared/shared.module';
 
-import {MdSlideToggleModule} from '@angular/material';
+import {MatSlideToggleModule} from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     LiveRoutingModule,
     SharedModule,
-    MdSlideToggleModule
+    MatSlideToggleModule
   ],
   declarations: [LiveListComponent, LiveDetailComponent],
   providers: [LiveService]

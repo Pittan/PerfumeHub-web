@@ -2,20 +2,12 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - "6.10"
+  - "8"
 
 addons:
-apt:
-  sources:
-    - google-chrome
-  packages:
-    - google-chrome-stable
-    - google-chrome-beta
+  chrome: stable
 
 cache: yarn
-
-before_install:
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 before_script:
   - yarn global add firebase-tools

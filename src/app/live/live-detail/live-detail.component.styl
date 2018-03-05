@@ -1,78 +1,91 @@
 .participant-list-title
-  font-size 4.8vmin
-  line-height 5vmin
-  margin 5vmin 2vmin 1vmin
+  font-size 15px
+  line-height 1.6
+  margin 10px 20px
+  background-color #489bc6
+  padding 0 6px
+  border-radius 6px
+  color #ffffff
 
 .participant-list
   display flex
   flex-wrap wrap
   justify-content space-around
-  margin-bottom 4vmin
+  margin-bottom 20px
+  padding 0 20px
 
 .user-cell
-  width 18vmin
+  width 100px
   overflow hidden
   cursor pointer
 
 .slide-toggle
-  margin 2vmin 0 4vmin
+  margin 10px 0 10px
 
 .login-message
-  font-size 4vmin
-  line-height 5vmin
-  margin 2vmin
+  font-size 14px
+  line-height 1.5
+  margin 10px 20px
 
   .login
     color #489bc6
+    cursor pointer
+
+    &:hover
+      opacity .8
 
 .user-icon
-  height 14vmin
-  width 14vmin
+  height 70px
+  width 70px
   background-size contain
   background-position center
   background-repeat no-repeat
-  border-radius 7vmin
-  margin 2vmin 2vmin 0
+  border-radius 50%
+  margin 5px auto 0
+  background-color #e0e0e0
 
   &:active
     opacity 0.7
 
 .user-name
-  font-size 2vmin
+  font-size 12px
   overflow hidden
   text-overflow ellipsis
   text-align center
 
 .live-title
-  font-size 5vmin
-  line-height 6vmin
+  font-size 20px
+  line-height 1.5
   word-break break-all
-  margin 5vmin 2vmin 4vmin
-  padding-bottom 4vmin
+  margin 15px 20px 10px
+  padding-bottom 10px
   border-bottom 1px solid #e0e0e0
 
 .live-place
-  font-size 4vmin
+  font-size 16px
   word-break break-all
-  padding 0 2vmin
+  padding 0 20px
 
 .live-open
 .live-start
-  font-size 3.6vmin
+  font-size 14px
   word-break break-all
-  padding 0 2vmin
+  padding 0 20px
 
 .button-container
   display flex
   justify-content center
-  margin 4vmin 1vmin 2vmin
+  margin 10px 20px 10px
 
 .button
-  height 10vmin
+  height 50px
   flex 1
-  margin 0 2vmin
-  font-size 4vmin
-  border-radius 2vmin
+  margin 0 8px
+  font-size 16px
+  border-radius 10px
+  cursor pointer
+  &:hover
+    opacity .8
 
   &.participate
     background-color #489bc6

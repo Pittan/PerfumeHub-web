@@ -2,8 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NotificationComponent } from './notification.component';
 import { NativeBridgeService } from '../../core/native-bridge.service';
-import { UiSwitchComponent } from 'ngx-ui-switch/dist/ui-switch.component';
+
 import { FormsModule } from '@angular/forms';
+import { UiSwitchModule } from 'ngx-ui-switch';
 
 describe('NotificationComponent', () => {
   let component: NotificationComponent;
@@ -11,9 +12,9 @@ describe('NotificationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NotificationComponent, UiSwitchComponent ],
+      declarations: [ NotificationComponent ],
       providers: [NativeBridgeService],
-      imports: [FormsModule]
+      imports: [FormsModule, UiSwitchModule]
     })
     .compileComponents();
   }));

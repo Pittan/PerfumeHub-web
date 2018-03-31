@@ -1,6 +1,6 @@
 import { ApplicationRef, Component, OnInit } from '@angular/core';
-import { Angulartics2GoogleAnalytics } from 'angulartics2';
 import { HeaderService } from './core/header/header.service';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import { NativeBridgeService } from './core/native-bridge.service';
 
 @Component({

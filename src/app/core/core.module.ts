@@ -7,7 +7,6 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { HeaderService } from './header/header.service';
-import { CookieModule } from 'ngx-cookie';
 import { AppMenuComponent } from './app-menu/app-menu.component';
 import { RouterModule } from '@angular/router';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
@@ -19,8 +18,7 @@ import { NativeBridgeService } from './native-bridge.service';
     CommonModule,
     RouterModule,
     HttpModule,
-    FormsModule,
-    CookieModule.forChild()
+    FormsModule
   ],
   exports: [HeaderComponent, AppMenuComponent, LoadingSpinnerComponent],
   declarations: [HeaderComponent, AppMenuComponent, LoadingSpinnerComponent],

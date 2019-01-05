@@ -13,7 +13,9 @@ export class AppComponent implements OnInit {
   constructor(private headerService: HeaderService,
               angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
               private appRef: ApplicationRef,
-              private nativeBridge: NativeBridgeService) {}
+              private nativeBridge: NativeBridgeService) {
+                angulartics2GoogleAnalytics.startTracking()
+              }
 
   ngOnInit() {
     if (this.nativeBridge.isApp()) {

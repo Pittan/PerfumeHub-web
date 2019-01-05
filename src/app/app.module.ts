@@ -20,7 +20,7 @@ import 'hammerjs';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
+    Angulartics2Module.forRoot(),
     BrowserAnimationsModule
   ],
   providers: [],

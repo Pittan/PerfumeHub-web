@@ -296,12 +296,12 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
-angulartics2@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/angulartics2/-/angulartics2-5.3.0.tgz#edee3ba4f69a123e71a5423c7ff661e7de79a13c"
-  integrity sha512-+WIl/cKsSox6yxeej6P2esLKqfPwiFCxGiLASeUiugwsOFglWREnS877c1zyTIM8+wSRPo2YhLYMk/VSs7Kwzw==
+angulartics2@^7.3.0:
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/angulartics2/-/angulartics2-7.3.0.tgz#1aa69bbb3bbe47be462dddffae11b0ceff33237b"
+  integrity sha512-IMYpci/ULPTKpWry2QzcDhbhWa8fp5hbyMR8Upj4mUEdLYQKlIDCrSsaS4HPwm3rViDvEqNDzAc7Ie+Vop0Zfw==
   dependencies:
-    tslib "^1.7.1"
+    tslib "^1.9.0"
 
 ansi-escapes@^3.0.0:
   version "3.1.0"

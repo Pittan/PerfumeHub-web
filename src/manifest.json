@@ -1,6 +1,11 @@
 {
-  "short_name": "PerfumeHub",
   "name": "PerfumeHub",
+  "short_name": "PerfumeHub",
+  "theme_color": "#489BC6",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
     {
       "src": "assets/launcher-icon@2x.png",
@@ -12,9 +17,5 @@
       "type": "image/png",
       "sizes": "144x144"
     }
-  ],
-  "start_url": "/",
-  "background_color": "#489BC6",
-  "theme_color": "#489BC6",
-  "display": "standalone"
+  ]
 }

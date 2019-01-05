@@ -20,7 +20,7 @@ before_script:
 script:
   - ng -v
   - ng lint
-  - ng test --single-run --progress false --reporters coverage-istanbul --code-coverage
+  - ng test --watch=false --progress false --reporters coverage-istanbul --code-coverage
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - ng build --prod --progress false
 

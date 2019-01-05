@@ -3,8 +3,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { AuthGuard } from './auth.guard';
 import { UserService } from './user.service';
 import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
+import {of } from 'rxjs';
 
 describe('AuthGuard', () => {
 
@@ -15,7 +14,7 @@ describe('AuthGuard', () => {
     navigate: jasmine.createSpy('navigate')
   };
 
-  let userResult: any = Observable.of({
+  let userResult: any = of({
     screen_name: 'foo',
     id: '123',
     image_url: 'abc',
@@ -50,7 +49,7 @@ describe('AuthGuard', () => {
   });
 
   it('should activate page with false' , () => {
-    userResult = Observable.of(null);
+    userResult = of(null);
     userService.getUser.and.returnValue(userResult);
     const result = service.canActivate(next, state);
     result.subscribe(

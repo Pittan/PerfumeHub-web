@@ -10,6 +10,8 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import 'hammerjs';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -20,8 +22,9 @@ import 'hammerjs';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
-    BrowserAnimationsModule
+    Angulartics2Module.forRoot(),
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

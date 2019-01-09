@@ -1,3 +1,5 @@
+@import '../../../definitions.styl'
+
 &:host
   width 100%
   height 100%
@@ -9,7 +11,7 @@
     font-size 18px
     line-height 22px
     text-align center
-    font-weight 700
+    font-weight $font-weight-source-han-sans-bold
 
   .date
     font-size 14px
@@ -33,9 +35,9 @@
     display flex
     padding 10px
     font-size 14px
-    line-height 1.5
-    font-weight bold
+    line-height 1.2
     -webkit-tap-highlight-color transparent
+    font-weight $font-weight-source-han-sans-bold
 
     &:active
       background-color #e6e6e6

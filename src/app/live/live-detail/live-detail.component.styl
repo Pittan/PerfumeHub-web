@@ -1,11 +1,18 @@
+@import '../../../definitions.styl'
+
+:host()
+  display block
+  padding-bottom 40px
+
+// 参加者リスト
 .participant-list-title
-  font-size 15px
-  line-height 1.6
-  margin 10px 20px
-  background-color #489bc6
-  padding 0 6px
-  border-radius 6px
-  color #ffffff
+  font-size 14px
+  font-weight $font-weight-source-han-sans-bold
+  line-height 1.2
+  margin 6px 20px 10px
+  border-bottom 2px solid #489bc6
+  padding 4px 6px 4px
+  color #424242
 
 .participant-list
   display flex
@@ -19,20 +26,10 @@
   overflow hidden
   cursor pointer
 
-.slide-toggle
-  margin 10px 0 10px
-
-.login-message
+.no-users
   font-size 14px
-  line-height 1.5
-  margin 10px 20px
-
-  .login
-    color #489bc6
-    cursor pointer
-
-    &:hover
-      opacity .8
+  color #757575
+  font-weight $font-weight-source-han-sans-light
 
 .user-icon
   height 70px
@@ -43,6 +40,7 @@
   border-radius 50%
   margin 5px auto 0
   background-color #e0e0e0
+  border 1px solid #e0e0e0
 
   &:active
     opacity 0.7
@@ -55,49 +53,97 @@
 
 .live-title
   font-size 20px
-  line-height 1.5
+  line-height 1.2
   word-break break-all
   margin 15px 20px 10px
   padding-bottom 10px
   border-bottom 1px solid #e0e0e0
+  font-weight $font-weight-source-han-sans-bold
 
 .live-place
   font-size 16px
   word-break break-all
   padding 0 20px
+  margin-bottom 4px
 
 .live-open
 .live-start
   font-size 14px
   word-break break-all
   padding 0 20px
+  font-weight $font-weight-source-han-sans-light
+  color #757575
+  .strong
+    color #424242
+    font-weight $font-weight-source-han-sans-normal
+
+.slide-container
+  color #424242
+  font-size 14px
+  border 1px solid #e0e0e0
+  border-radius 5px
+  margin 0 20px 0
+
+  .slide-toggle
+    margin 10px 0 10px
+
+.login-message
+  font-size 14px
+  line-height 1.2
+  text-align center
+  margin 10px 20px
+  padding 20px
+  border-radius 5px
+  border 1px solid #e0e0e0
+
+  .login-btn
+    background-color #489bc6
+    cursor pointer
+    height 46px
+    max-width 300px
+    flex 1
+    margin 20px auto 0
+    font-size 14px
+    font-weight $font-weight-source-han-sans-bold
+    border-radius 5px
+    color white
+
+    &:hover
+      opacity .8
 
 .button-container
   display flex
   justify-content center
   margin 10px 20px 10px
 
-.button
-  height 50px
-  flex 1
-  margin 0 8px
-  font-size 16px
-  border-radius 10px
-  cursor pointer
-  &:hover
-    opacity .8
-
-  &.participate
-    background-color #489bc6
+  .button
+    height 46px
+    flex 1
+    margin 0 8px
+    font-size 14px
+    font-weight $font-weight-source-han-sans-bold
+    border-radius 5px
+    cursor pointer
     color white
 
-  &.non-participate
-    background-color #ff5959
-    color white
+    &:first-child
+      margin-left 0
 
-  &.pending
-    background-color #0c9613
-    color white
+    &:last-child
+      margin-right 0
+    &:hover
+      opacity .8
 
-  &:active
-    opacity 0.7
+    &:active
+      opacity 0.7
+
+    &.participate
+      background-color #489bc6
+
+    &.non-participate
+      background-color #ff5959
+
+    &.pending
+      background-color #0c9613
+
+

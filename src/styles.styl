@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import './definitions.styl'
 
 *
   box-sizing border-box
@@ -12,9 +13,11 @@ body
   width 100%
   left 0
   top 0
-  font-family 'Droid Sans',HiraKakuProN-W3,'ヒラギノ角ゴ ProN W3'
-  line-height 1.6
-  color #616161
+  font-family $font-family-source-han-sans,Meiryo,HiraKakuProN-W3,'ヒラギノ角ゴ ProN W3'
+  font-weight $font-weight-source-han-sans-normal
+  font-style $font-style-source-han-sans
+  line-height 1.2
+  color #424242
   background-color #f5f5f5
 
 a

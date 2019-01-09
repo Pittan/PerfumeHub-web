@@ -1,8 +1,8 @@
 <div class="live-title">{{liveInfo?.name}}</div>
 
 <div class="live-place">{{liveInfo?.place}}({{liveInfo?.place_for_search}})</div>
-<div class="live-open" >開場 {{liveInfo?.open_at | dateParse | date:'y/M/d HH:mm'}}</div>
-<div class="live-start">開演 {{liveInfo?.start_at | dateParse | date:'y/M/d HH:mm'}}</div>
+<div class="live-open" ><span class="strong">開場</span> {{liveInfo?.open_at | dateParse | date:'y/M/d HH:mm'}}</div>
+<div class="live-start"><span class="strong">開演</span> {{liveInfo?.start_at | dateParse | date:'y/M/d HH:mm'}}</div>
 
 <div class="status-container" *ngIf="userInfo">
   <div class="button-container">
@@ -16,29 +16,39 @@
 </div>
 
 <div class="login-message" *ngIf="!userInfo">
-  他のユーザーと参加ステータスをシェアするためには<span class="login" (click)="login()">ログイン</span>が必要です
+  他のユーザーと参加ステータスをシェアするためには、Twitterアカウントでログインが必要です。
+  <div class="login-btn ph-flex-center" (click)="login()">ログイン</div>
 </div>
 
 <div class="participant-list-title">行きます</div>
-<div class="participant-list">
+<div class="participant-list" *ngIf="participant?.length > 0">
   <div class="user-cell" *ngFor="let user of participant" (click)="userClicked(user)">
     <div class="user-icon" [ngStyle]="{'background-image': 'url(' + user.image_url + ')'}"></div>
     <div class="user-name">{{user.name}}</div>
   </div>
 </div>
+<div class="no-users ph-flex-center" *ngIf="participant?.length === 0">
+  ユーザーはいません
+</div>
 
 <div class="participant-list-title">行きたい</div>
-<div class="participant-list">
+<div class="participant-list" *ngIf="wantToParticipant?.length > 0">
   <div class="user-cell" *ngFor="let user of wantToParticipant" (click)="userClicked(user)">
     <div class="user-icon" [ngStyle]="{'background-image': 'url(' + user.image_url + ')'}"></div>
     <div class="user-name">{{user.name}}</div>
   </div>
 </div>
+<div class="no-users ph-flex-center" *ngIf="wantToParticipant?.length === 0">
+  ユーザーはいません
+</div>
 
 <div class="participant-list-title">行けません</div>
-<div class="participant-list">
+<div class="participant-list" *ngIf="nonParticipant?.length > 0">
   <div class="user-cell" *ngFor="let user of nonParticipant" (click)="userClicked(user)">
     <div class="user-icon" [ngStyle]="{'background-image': 'url(' + user.image_url + ')'}"></div>
     <div class="user-name">{{user.name}}</div>
   </div>
+</div>
+<div class="no-users ph-flex-center" *ngIf="nonParticipant?.length === 0">
+  ユーザーはいません
 </div>

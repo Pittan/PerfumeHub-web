@@ -5,12 +5,14 @@ import { NotificationRoutingModule } from './notification-routing.module';
 import { NotificationEditComponent } from './notification-edit/notification-edit.component';
 import { FormsModule } from '@angular/forms';
 import { NotificationListComponent } from './notification-list/notification-list.component';
+import { SharedModule } from '../shared/shared.module'
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    NotificationRoutingModule
+    NotificationRoutingModule,
+    SharedModule
   ],
   declarations: [NotificationEditComponent, NotificationListComponent]
 })

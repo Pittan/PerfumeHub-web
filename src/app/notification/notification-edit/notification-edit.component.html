@@ -1,142 +1,144 @@
-<div class="title">新規通知</div>
+<ph-one-column-container>
+  <div class="title">新規通知</div>
 
-<form class="schedule-form">
+  <form class="schedule-form">
 
-  <div class="schedule-element">
-    <div class="label">通知の種別</div>
-    <div class="description">通知を開いた時の振る舞い</div>
-    <div class="input-container">
-      <select name="notificationType" class="select" [(ngModel)]="notificationType">
-        <option value="pta">P.T.A.</option>
-        <option value="normal">通常</option>
-      </select>
-      <svg viewBox="0 0 12 14" class="triangle"><path d="M0 0l12 7-12 7z"></path></svg>
+    <div class="schedule-element">
+      <div class="label">通知の種別</div>
+      <div class="description">通知を開いた時の振る舞い</div>
+      <div class="input-container">
+        <select name="notificationType" class="select" [(ngModel)]="notificationType">
+          <option value="pta">P.T.A.</option>
+          <option value="normal">通常</option>
+        </select>
+        <svg viewBox="0 0 12 14" class="triangle"><path d="M0 0l12 7-12 7z"></path></svg>
+      </div>
     </div>
-  </div>
 
-  <div class="schedule-element">
-    <div class="label">チャンネル</div>
-    <div class="description">通知の送信先チャンネル</div>
-    <div class="input-container">
-      <select name="channel" class="select" [(ngModel)]="channel" required>
-        <option value="all">all</option>
-        <option value="news">news</option>
-        <option value="pta">pta</option>
-        <option value="author">author</option>
-        <option value="schedule">schedule</option>
-      </select>
-      <svg viewBox="0 0 12 14" class="triangle"><path d="M0 0l12 7-12 7z"></path></svg>
+    <div class="schedule-element">
+      <div class="label">チャンネル</div>
+      <div class="description">通知の送信先チャンネル</div>
+      <div class="input-container">
+        <select name="channel" class="select" [(ngModel)]="channel" required>
+          <option value="all">all</option>
+          <option value="news">news</option>
+          <option value="pta">pta</option>
+          <option value="author">author</option>
+          <option value="schedule">schedule</option>
+        </select>
+        <svg viewBox="0 0 12 14" class="triangle"><path d="M0 0l12 7-12 7z"></path></svg>
+      </div>
     </div>
-  </div>
 
-  <div class="schedule-element" *ngIf="notificationType == 'normal'">
-    <div class="label">タイトル</div>
-    <div class="description">通知のタイトル(iOS10以降)</div>
-    <div class="input-container">
-      <input type="text" class="schedule-input" name="header" [(ngModel)]="header">
+    <div class="schedule-element" *ngIf="notificationType == 'normal'">
+      <div class="label">タイトル</div>
+      <div class="description">通知のタイトル(iOS10以降)</div>
+      <div class="input-container">
+        <input type="text" class="schedule-input" name="header" [(ngModel)]="header">
+      </div>
     </div>
-  </div>
 
-  <div class="schedule-element">
-    <div class="label">本文</div>
-    <div class="description">通知の本文(iOS9以下ではタイトル扱いです)</div>
-    <div class="input-container">
-      <input type="text" class="schedule-input" name="body" [(ngModel)]="body">
+    <div class="schedule-element">
+      <div class="label">本文</div>
+      <div class="description">通知の本文(iOS9以下ではタイトル扱いです)</div>
+      <div class="input-container">
+        <input type="text" class="schedule-input" name="body" [(ngModel)]="body">
+      </div>
     </div>
-  </div>
 
-  <div class="schedule-element">
-    <div class="label">画像URL</div>
-    <div class="description">(iOS10以降)150kb以下の画像を指定してください</div>
-    <div class="input-container">
-      <input type="text" class="schedule-input" name="image_url" [(ngModel)]="image_url">
+    <div class="schedule-element">
+      <div class="label">画像URL</div>
+      <div class="description">(iOS10以降)150kb以下の画像を指定してください</div>
+      <div class="input-container">
+        <input type="text" class="schedule-input" name="image_url" [(ngModel)]="image_url">
+      </div>
     </div>
-  </div>
 
 
-  <div class="schedule-element" *ngIf="notificationType == 'pta'">
-    <div class="label">P.T.A.遷移先</div>
-    <div class="description">P.T.A.自動ログイン後の遷移先</div>
-    <div class="input-container">
-      <select name="transition" class="select" [(ngModel)]="transition">
-        <option value="PHNewsTransition" selected>NEWS</option>
-        <option value="PHStaffTransition">STAFF BLOG</option>
-        <option value="PHBlogTransition">MEMBER BLOG</option>
-        <option value="PHMovieTransition">MOVIE</option>
-        <option value="PHPhotoTransition">PHOTO</option>
-        <option value="PHSpecialTransition">SPECIAL</option>
-      </select>
-      <svg viewBox="0 0 12 14" class="triangle"><path d="M0 0l12 7-12 7z"></path></svg>
+    <div class="schedule-element" *ngIf="notificationType == 'pta'">
+      <div class="label">P.T.A.遷移先</div>
+      <div class="description">P.T.A.自動ログイン後の遷移先</div>
+      <div class="input-container">
+        <select name="transition" class="select" [(ngModel)]="transition">
+          <option value="PHNewsTransition" selected>NEWS</option>
+          <option value="PHStaffTransition">STAFF BLOG</option>
+          <option value="PHBlogTransition">MEMBER BLOG</option>
+          <option value="PHMovieTransition">MOVIE</option>
+          <option value="PHPhotoTransition">PHOTO</option>
+          <option value="PHSpecialTransition">SPECIAL</option>
+        </select>
+        <svg viewBox="0 0 12 14" class="triangle"><path d="M0 0l12 7-12 7z"></path></svg>
+      </div>
     </div>
-  </div>
 
-  <div class="schedule-element" *ngIf="notificationType == 'normal'">
-    <div class="label">遷移先URL</div>
-    <div class="description">アプリ内ブラウザで開くURL</div>
-    <div class="input-container">
-      <input type="text" class="schedule-input" name="website_url" [(ngModel)]="website_url">
+    <div class="schedule-element" *ngIf="notificationType == 'normal'">
+      <div class="label">遷移先URL</div>
+      <div class="description">アプリ内ブラウザで開くURL</div>
+      <div class="input-container">
+        <input type="text" class="schedule-input" name="website_url" [(ngModel)]="website_url">
+      </div>
     </div>
-  </div>
 
-  <!-- 送信日時 -->
-  <div class="schedule-element">
-    <div class="label">送信するタイミング</div>
-    <div class="description">今すぐ送信するか、日時を指定して送信できます</div>
-    <div class="input-container">
-      <select name="transition" class="select" [(ngModel)]="timeToSend">
-        <option value="immediately" selected>今すぐ送信</option>
-        <option value="custom">日時を指定する</option>
-      </select>
-      <svg viewBox="0 0 12 14" class="triangle"><path d="M0 0l12 7-12 7z"></path></svg>
+    <!-- 送信日時 -->
+    <div class="schedule-element">
+      <div class="label">送信するタイミング</div>
+      <div class="description">今すぐ送信するか、日時を指定して送信できます</div>
+      <div class="input-container">
+        <select name="transition" class="select" [(ngModel)]="timeToSend">
+          <option value="immediately" selected>今すぐ送信</option>
+          <option value="custom">日時を指定する</option>
+        </select>
+        <svg viewBox="0 0 12 14" class="triangle"><path d="M0 0l12 7-12 7z"></path></svg>
+      </div>
     </div>
-  </div>
 
-  <div class="schedule-element" *ngIf="timeToSend == 'custom'">
-    <div class="label">送信日時</div>
-    <div class="description">たぶん秒まで正確には送れないと思います。<br>例) 2017-12-31 12:34:56</div>
-    <div class="input-container">
-      <input type="text" class="schedule-input" name="custom_time" [(ngModel)]="customTimeToSend">
+    <div class="schedule-element" *ngIf="timeToSend == 'custom'">
+      <div class="label">送信日時</div>
+      <div class="description">たぶん秒まで正確には送れないと思います。<br>例) 2017-12-31 12:34:56</div>
+      <div class="input-container">
+        <input type="text" class="schedule-input" name="custom_time" [(ngModel)]="customTimeToSend">
+      </div>
     </div>
-  </div>
 
-  <div class="button ph-flex-center" (click)="submit()">
-    送信
-  </div>
+    <div class="button ph-flex-center" (click)="submit()">
+      送信
+    </div>
 
-  <!--<div class="schedule-element">-->
-  <!--<div class="label">通知</div>-->
-  <!--<div class="description">この予定を通知対象にするかどうか</div>-->
-  <!--<div class="input-container">-->
-  <!--<select name="weekday" class="select" required>-->
-  <!--<option value="0">有効</option>-->
-  <!--<option value="1">無効</option>-->
-  <!--</select>-->
-  <!--<svg viewBox="0 0 12 14" class="triangle"><path d="M0 0l12 7-12 7z"></path></svg>-->
-  <!--</div>-->
-  <!--</div>-->
+    <!--<div class="schedule-element">-->
+    <!--<div class="label">通知</div>-->
+    <!--<div class="description">この予定を通知対象にするかどうか</div>-->
+    <!--<div class="input-container">-->
+    <!--<select name="weekday" class="select" required>-->
+    <!--<option value="0">有効</option>-->
+    <!--<option value="1">無効</option>-->
+    <!--</select>-->
+    <!--<svg viewBox="0 0 12 14" class="triangle"><path d="M0 0l12 7-12 7z"></path></svg>-->
+    <!--</div>-->
+    <!--</div>-->
 
-  <!--<div class="schedule-element">-->
-  <!--<div class="label">終日予定</div>-->
-  <!--<div class="description">「リリース日」みたいなざっくりしたスケジュールの場合には有効にしてください。</div>-->
-  <!--<div class="input-container">-->
-  <!--<select name="weekday" class="select">-->
-  <!--<option value="0">はい</option>-->
-  <!--<option value="1">いいえ</option>-->
-  <!--</select>-->
-  <!--<svg viewBox="0 0 12 14" class="triangle"><path d="M0 0l12 7-12 7z"></path></svg>-->
-  <!--</div>-->
-  <!--</div>-->
+    <!--<div class="schedule-element">-->
+    <!--<div class="label">終日予定</div>-->
+    <!--<div class="description">「リリース日」みたいなざっくりしたスケジュールの場合には有効にしてください。</div>-->
+    <!--<div class="input-container">-->
+    <!--<select name="weekday" class="select">-->
+    <!--<option value="0">はい</option>-->
+    <!--<option value="1">いいえ</option>-->
+    <!--</select>-->
+    <!--<svg viewBox="0 0 12 14" class="triangle"><path d="M0 0l12 7-12 7z"></path></svg>-->
+    <!--</div>-->
+    <!--</div>-->
 
-  <!--<div class="schedule-element">-->
-  <!--<div class="label">深夜</div>-->
-  <!--<div class="description">深夜の予定（深夜番組）などの場合には、前日にもその日の予定として表示します。</div>-->
-  <!--<div class="input-container">-->
-  <!--<select name="weekday" class="select">-->
-  <!--<option value="0">はい</option>-->
-  <!--<option value="1">いいえ</option>-->
-  <!--</select>-->
-  <!--<svg viewBox="0 0 12 14" class="triangle"><path d="M0 0l12 7-12 7z"></path></svg>-->
-  <!--</div>-->
-  <!--</div>-->
+    <!--<div class="schedule-element">-->
+    <!--<div class="label">深夜</div>-->
+    <!--<div class="description">深夜の予定（深夜番組）などの場合には、前日にもその日の予定として表示します。</div>-->
+    <!--<div class="input-container">-->
+    <!--<select name="weekday" class="select">-->
+    <!--<option value="0">はい</option>-->
+    <!--<option value="1">いいえ</option>-->
+    <!--</select>-->
+    <!--<svg viewBox="0 0 12 14" class="triangle"><path d="M0 0l12 7-12 7z"></path></svg>-->
+    <!--</div>-->
+    <!--</div>-->
 
-</form>
+  </form>
+</ph-one-column-container>

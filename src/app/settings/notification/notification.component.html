@@ -1,9 +1,10 @@
-
-<div class="setting-title">通知設定</div>
-<div class="switch-cell" *ngFor="let channel of channels">
-  <div class="main-row">
-    <div class="label">{{channel.name}} <span class="small">({{channel.channel}})</span></div>
-    <ui-switch [(ngModel)]="channel.subscribed" (change)="notificationChange($event, channel)" [disabled]="!isApp"></ui-switch>
+<ph-one-column-container>
+  <div class="setting-title">通知設定</div>
+  <div class="switch-cell" *ngFor="let channel of channels">
+    <div class="main-row">
+      <div class="label">{{channel.name}} <span class="small">({{channel.channel}})</span></div>
+      <ui-switch [(ngModel)]="channel.subscribed" (change)="notificationChange($event, channel)" [disabled]="!isApp"></ui-switch>
+    </div>
+    <div class="description-row">{{channel.description}}</div>
   </div>
-  <div class="description-row">{{channel.description}}</div>
-</div>
+</ph-one-column-container>

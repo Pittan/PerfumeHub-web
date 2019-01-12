@@ -18,8 +18,12 @@
     padding 0 10px
     overflow scroll
     background-color #fff
-    display flex
-    flex-direction column
+
+    .inner-container
+      display flex
+      flex-direction column
+      max-width 600px
+      margin 0 auto
 
   .menu-label
     font-size 12px
@@ -35,6 +39,7 @@
     font-size 16px
     font-weight 700
     outline none
+    cursor pointer
 
     &:active
       background-color #e0e0e0

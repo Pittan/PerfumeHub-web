@@ -1,8 +1,10 @@
-<div class="header">Live</div>
+<ph-one-column-container>
+  <div class="header">Live</div>
 
-<div class="live" *ngFor="let live of lives" routerLink="/live/{{live.list_name}}">
-  <div class="live-tour">{{live.name}}</div>
-  <div class="live-place">{{live?.place}}({{live?.place_for_search}})</div>
-  <div class="live-open" >開場 {{live?.open_at | dateParse | date:'y/M/d HH:mm'}}</div>
-  <div class="live-start">開演 {{live?.start_at | dateParse | date:'y/M/d HH:mm'}}</div>
-</div>
+  <div class="live" *ngFor="let live of lives" routerLink="/live/{{live.list_name}}">
+    <div class="live-tour">{{live.name}}</div>
+    <div class="live-place">{{live?.place}}({{live?.place_for_search}})</div>
+    <div class="live-open" >開場 {{live?.open_at | dateParse | date:'y/M/d HH:mm'}}</div>
+    <div class="live-start">開演 {{live?.start_at | dateParse | date:'y/M/d HH:mm'}}</div>
+  </div>
+</ph-one-column-container>

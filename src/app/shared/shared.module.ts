@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DateParsePipe } from './date-parse.pipe';
 import { DateJpPipe } from './date-jp.pipe';
+import { OneColumnContainerComponent } from './one-column-container/one-column-container.component'
 
 @NgModule({
   imports: [
@@ -9,11 +10,13 @@ import { DateJpPipe } from './date-jp.pipe';
   ],
   exports: [
     DateJpPipe,
-    DateParsePipe
+    DateParsePipe,
+    OneColumnContainerComponent
   ],
   declarations: [
     DateJpPipe,
-    DateParsePipe
+    DateParsePipe,
+    OneColumnContainerComponent
   ]
 })
 export class SharedModule { }

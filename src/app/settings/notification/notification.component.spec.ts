@@ -5,6 +5,7 @@ import { NativeBridgeService } from '../../core/native-bridge.service';
 
 import { FormsModule } from '@angular/forms';
 import { UiSwitchModule } from 'ngx-ui-switch';
+import { SharedModule } from '../../shared/shared.module'
 
 describe('NotificationComponent', () => {
   let component: NotificationComponent;
@@ -14,7 +15,7 @@ describe('NotificationComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ NotificationComponent ],
       providers: [NativeBridgeService],
-      imports: [FormsModule, UiSwitchModule]
+      imports: [FormsModule, UiSwitchModule, SharedModule]
     })
     .compileComponents();
   }));

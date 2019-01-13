@@ -1,0 +1,26 @@
+:host()
+  display flex
+  justify-content center
+  max-width 900px
+  margin 0 auto
+
+.main
+  display block
+  flex 2
+  max-width 600px
+
+.sub
+  display block
+  flex 1
+  max-width 300px
+  @media screen and (max-width:899px)
+    display none
+
+// スマホに適用するスタイルを書く //
+//@media screen and (max-width:599px)
+  // タブレットに適用したいスタイル //
+
+//@media screen and (min-width:960px) and ( max-width:1280px)
+//   通常のデスクトップに適用したいスタイル //
+//@media screen and (min-width:600px)
+  // 横幅の広いデスクトップに適用したいスタイル //

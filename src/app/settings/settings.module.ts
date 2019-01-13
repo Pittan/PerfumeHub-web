@@ -5,13 +5,15 @@ import { SettingsRoutingModule } from './settings-routing.module';
 import { UiSwitchModule } from 'ngx-ui-switch';
 import { FormsModule } from '@angular/forms';
 import { NotificationComponent } from './notification/notification.component';
+import { SharedModule } from '../shared/shared.module'
 
 @NgModule({
   imports: [
     CommonModule,
     SettingsRoutingModule,
     UiSwitchModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   declarations: [IndexComponent, NotificationComponent]
 })

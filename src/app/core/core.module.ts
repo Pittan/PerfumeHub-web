@@ -20,8 +20,16 @@ import { NativeBridgeService } from './native-bridge.service';
     HttpModule,
     FormsModule
   ],
-  exports: [HeaderComponent, AppMenuComponent, LoadingSpinnerComponent],
-  declarations: [HeaderComponent, AppMenuComponent, LoadingSpinnerComponent],
+  exports: [
+    HeaderComponent,
+    AppMenuComponent,
+    LoadingSpinnerComponent
+  ],
+  declarations: [
+    HeaderComponent,
+    AppMenuComponent,
+    LoadingSpinnerComponent
+  ],
   providers: [ApiBaseService, UserService, HeaderService, LoadingSpinnerService, NativeBridgeService]
 })
 export class CoreModule { }
